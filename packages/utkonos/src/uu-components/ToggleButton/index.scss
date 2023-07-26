@@ -1,0 +1,62 @@
+$border-radius-size: 4px;
+
+.uu-toggleButton {
+  display: inline-flex;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+  height: 36px;
+  font-size: 13px;
+}
+
+.uu-toggleButtonInput {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+}
+
+.uu-toggleButtonLabel {
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 100px;
+  box-sizing: border-box;
+
+  color: var(--green-2);
+
+  cursor: pointer;
+  user-select: none;
+
+  border: 1px solid;
+  border-right: 0;
+  border-color: var(--green-2);
+
+  &:first-child {
+    border-radius: $border-radius-size 0 0 $border-radius-size;
+  }
+
+  &:last-child {
+    border-radius: 0 $border-radius-size $border-radius-size 0;
+    border-right: 1px solid;
+  }
+}
+
+.uu-toggleButtonLabel_checked {
+  background-color: var(--green-2);
+  color: var(--white-1);
+}
+
+.uu-toggleButtonLabel_disabled {
+  border-color: var(--black-5);
+  color: var(--black-5);
+  cursor: default;
+}
+
+.uu-toggleButtonLabel_checked.uu-toggleButtonLabel_disabled {
+  color: var(--white-1);
+  background-color: var(--black-5);
+}

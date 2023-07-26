@@ -1,0 +1,47 @@
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Rubik Light'), local('Rubik-Light'), url('./fonts/Rubik-Light.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Rubik'), local('Rubik-Regular'), url('./fonts/Rubik-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Rubik Medium'), local('Rubik-Medium'),
+    url('./fonts/Rubik-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Rubik Bold'), local('Rubik-Bold'), url('./fonts/Rubik-Bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Rubik';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Rubik Italic'), local('Rubik-Italic'),
+    url('./fonts/Rubik-Italic.woff2') format('woff2');
+}
+
+html {
+  font-family: 'Rubik', sans-serif;
+  font-size: 13px;
+  line-height: 1.385; /* 18px */
+  -webkit-font-smoothing: auto;
+  color: var(--black-2);
+}
+
+// When adding a new fonts or glyphs,
+// add new `FontFaceObserver` in `src/index.tsx` file.

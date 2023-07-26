@@ -1,0 +1,6 @@
+// Переопределение ненужных стилей sanitaze тк используем пакет
+*,
+::before,
+::after {
+  background-repeat: repeat;
+}

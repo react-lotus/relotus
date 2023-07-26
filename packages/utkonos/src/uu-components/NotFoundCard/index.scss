@@ -1,0 +1,29 @@
+.uu-notFoundCard {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.uu-notFoundCard__icon {
+  margin-top: -50px;
+}
+
+.uu-notFoundCard__title {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  margin: 20px auto 30px;
+  color: var(--black-1);
+}
+
+.uu-notFoundCard__message {
+  font-size: 16px;
+  line-height: 25px;
+  max-width: 550px;
+  text-align: center;
+  margin: 0;
+  color: #5a5a5a;
+}

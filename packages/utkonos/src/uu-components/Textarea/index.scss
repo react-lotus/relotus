@@ -1,0 +1,44 @@
+@import '../_input/index.scss';
+
+.uu-textareaBox {
+  @include box();
+}
+
+.uu-textarea {
+  @include basic();
+  min-height: 30px;
+}
+
+.uu-textarea_hasError {
+  @include errorBorder;
+}
+
+.uu-textarea_hasError + .uu-inputError {
+  @include error;
+  align-items: flex-start;
+  top: 7px;
+}
+
+.uu-textarea_noResize {
+  @include noResize;
+}
+
+.uu-textarea_row {
+  align-items: flex-start;
+}
+
+.uu-textareaAddon {
+  @include addon;
+  top: 7px;
+  align-items: flex-start;
+}
+
+.uu-textareaAddon + .uu-inputError {
+  @include error;
+  align-items: flex-start;
+  top: 7px;
+}
+
+.uu-textarea:disabled + .uu-textareaAddon {
+  @include disabledWithAddon;
+}

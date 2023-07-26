@@ -1,0 +1,21 @@
+:global(#story--controls-dropdown--playground) {
+  margin-bottom: 140px;
+  display: flex;
+  justify-content: center;
+}
+
+.link {
+  padding: 8px 15px;
+}
+
+.button {
+  margin: 8px 15px;
+  align-self: center;
+}
+
+.layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 50px;
+  flex-wrap: wrap;
+}

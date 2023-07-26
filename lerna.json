@@ -1,0 +1,38 @@
+{
+  "$schema": "node_modules/lerna/schemas/lerna-schema.json",
+  "packages": ["configs/*", "packages/*"],
+  "version": "independent",
+  "useWorkspaces": true,
+  "useNx": true,
+  "command": {
+    "bootstrap": {
+      "concurrency": 4,
+      "hoist": "**",
+      "strict": true
+    },
+    "version": {
+      "allowBranch": ["master", "develop", "hotfix"],
+      "conventionalCommits": true,
+      "createRelease": "gitlab",
+      "preid": "rc",
+      "exact": true,
+      "message": "chore(release): publish [skip ci]"
+    },
+    "run": {
+      "stream": true,
+      "concurrency": 8,
+      "sort": false
+    },
+    "clean": {
+      "loglevel": "error",
+      "concurrency": 8,
+      "yes": true
+    }
+  },
+  "ignoreChanges": [
+    "packages/*/.eslintrc.js",
+    "packages/*/package-lock.json",
+    "packages/*/tsconfig.json",
+    "packages/*/tsconfig.build.json"
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/utkonos-styles",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build-styles": {
+      "executor": "nx:run-script",
+      "outputs": ["dist/packages/utkonos-styles"],
+      "options": {
+        "script": "build"
+      }
+    },
+    "build": {
+      "dependsOn": ["build-styles"],
+      "executor": "nx:noop"
+    },
+    "stylelint": {
+      "executor": "nx-stylelint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/utkonos-styles/src/*.{sc,c}ss"],
+        "formatter": "compact"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/utkonos-styles/**/*.ts"]
+      }
+    },
+    "storybook": {
+      "executor": "@nrwl/storybook:storybook",
+      "options": {
+        "uiFramework": "@storybook/react",
+        "port": 9012,
+        "config": {
+          "configFolder": "packages/utkonos-styles/.storybook"
+        }
+      },
+      "configurations": {
+        "composition": {
+          "quiet": true,
+          "open": false
+        }
+      }
+    },
+    "build-storybook": {
+      "executor": "@nrwl/storybook:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "uiFramework": "@storybook/react",
+        "outputPath": "dist/storybook/utkonos-styles",
+        "config": {
+          "configFolder": "packages/utkonos-styles/.storybook"
+        }
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    }
+  }
+}

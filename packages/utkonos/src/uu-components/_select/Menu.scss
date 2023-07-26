@@ -1,0 +1,39 @@
+.uu-selectMenu {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  z-index: 1;
+  background: var(--white-1);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.uu-selectMenu_position_left {
+  left: 0;
+  right: auto;
+}
+
+.uu-selectMenu_position_right {
+  left: auto;
+  right: 0;
+}
+
+.uu-selectMenu_hidden {
+  visibility: hidden;
+}
+
+.uu-selectMenuOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+.uu-selectMenuTargetShadow {
+  position: absolute;
+  height: 0;
+}

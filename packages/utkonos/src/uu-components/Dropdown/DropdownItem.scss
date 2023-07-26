@@ -1,0 +1,23 @@
+.uu-dropdownItem {
+  display: inline-block;
+  margin: 0;
+  text-align: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  border: none;
+  text-decoration: inherit;
+  color: inherit;
+  padding: 6px 15px;
+
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  &[disabled] {
+    color: var(--black-5);
+    pointer-events: none;
+    cursor: default;
+  }
+}

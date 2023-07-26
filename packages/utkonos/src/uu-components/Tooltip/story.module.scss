@@ -1,0 +1,79 @@
+.playground {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.row {
+  display: flex;
+}
+
+.topRow,
+.bottomRow {
+  @extend .row;
+
+  height: 150px;
+}
+
+.middleRow {
+  @extend .row;
+
+  height: 100px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 250px;
+  height: 100%;
+  padding: 30px;
+}
+
+.topEndItem {
+  @extend .item;
+
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.topItem {
+  @extend .item;
+
+  align-items: flex-end;
+}
+
+.topStartItem {
+  @extend .item;
+
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+.middleItem {
+  @extend .item;
+
+  justify-content: center;
+}
+
+.bottomEndItem {
+  @extend .item;
+
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+.bottomItem {
+  @extend .item;
+
+  align-items: flex-start;
+}
+
+.bottomStartItem {
+  @extend .item;
+
+  align-items: flex-start;
+  justify-content: flex-start;
+}

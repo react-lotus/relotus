@@ -1,0 +1,38 @@
+@import '../_input/index.scss';
+
+.uu-inputBox {
+  @include box();
+}
+
+.uu-input {
+  @include basic();
+}
+
+.uu-input:not(.uu-textarea) {
+  height: 30px;
+}
+
+.uu-input_hasError {
+  @include errorBorder;
+}
+
+.uu-input_hasError + .uu-inputError {
+  @include error;
+}
+
+.uu-input_noResize {
+  @include noResize;
+}
+
+.uu-inputAddon {
+  @include addon;
+  align-items: stretch;
+}
+
+.uu-inputAddon + .uu-inputError {
+  @include error;
+}
+
+.uu-input:disabled + .uu-inputAddon {
+  @include disabledWithAddon;
+}

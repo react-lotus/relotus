@@ -1,0 +1,35 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="saveFileFromResponse" />
+
+# saveFileFromResponse
+
+Функция для сохранения файла из ответа от сервера.
+
+```ts
+const response: { headers: Record<string, string>; data: Blob } = await request(params);
+saveFileFromResponse(response);
+```
+
+### Аргументы
+
+| Параметр | Обязательный | Значение по умолчанию |
+| -------- | ------------ | --------------------- |
+| headers  | +            |                       |
+| data     | +            |                       |
+
+## Пример использования
+
+```tsx
+const download = useCallback(
+  async (params) => {
+    try {
+      const response: { headers: Record<string, string>; data: Blob } = await request(params);
+      saveFileFromResponse(response);
+    } catch (e) {
+      toast.error('Не удалось скачать файл');
+    }
+  },
+  [request],
+);
+```

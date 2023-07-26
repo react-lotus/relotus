@@ -1,0 +1,96 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/utkonos/src",
+  "projectType": "library",
+  "implicitDependencies": ["tsconfig", "utkonos-styles"],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "external": ["react/jsx-runtime"],
+        "outputPath": "dist/packages/utkonos",
+        "tsConfig": "packages/utkonos/tsconfig.lib.json",
+        "project": "packages/utkonos/package.json",
+        "entryFile": "packages/utkonos/src/index.ts",
+        "rollupConfig": ["@nrwl/react/plugins/bundle-rollup", "packages/utkonos/rollup.config.js"],
+        "compiler": "babel",
+        "extractCss": "styles.css",
+        "assets": [
+          {
+            "glob": "packages/utkonos/*.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/utkonos/**/*.{t,j}{s,sx}"],
+        "maxWarnings": 44
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/utkonos"],
+      "options": {
+        "jestConfig": "packages/utkonos/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "tsc -b  --incremental",
+        "cwd": "packages/utkonos",
+        "color": true
+      }
+    },
+    "stylelint": {
+      "executor": "nx-stylelint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/utkonos/src/*.{sc,c}ss"],
+        "formatter": "compact"
+      }
+    },
+    "storybook": {
+      "executor": "@nrwl/storybook:storybook",
+      "dependsOn": ["^build-styles"],
+      "options": {
+        "uiFramework": "@storybook/react",
+        "port": 9013,
+        "config": {
+          "configFolder": "packages/utkonos/.storybook"
+        }
+      },
+      "configurations": {
+        "composition": {
+          "quiet": true,
+          "open": false
+        }
+      }
+    },
+    "build-storybook": {
+      "executor": "@nrwl/storybook:build",
+      "dependsOn": ["^build-styles"],
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "uiFramework": "@storybook/react",
+        "outputPath": "dist/storybook/utkonos",
+        "config": {
+          "configFolder": "packages/utkonos/.storybook"
+        }
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    }
+  },
+  "tags": []
+}

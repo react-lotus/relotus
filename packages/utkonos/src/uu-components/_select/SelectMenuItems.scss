@@ -1,0 +1,30 @@
+.uu-selectMenuItemsWrapper {
+  &.uu-selectMenuItemsWrapper_filterable {
+    padding-top: 0;
+  }
+
+  .uu-selectMenuItemsSection {
+    padding-bottom: 5px;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+
+  .uu-selectMenuItemsSectionList {
+    padding: 0;
+  }
+
+  .uu-selectMenuItemsSectionTitle {
+    color: var(--black-1);
+    font-weight: 500;
+    padding: 5px 15px;
+  }
+
+  .uu-selectMenuItemsEmpty {
+    color: var(--black-4);
+    cursor: default;
+    text-align: center;
+    padding: 10px 15px;
+  }
+}

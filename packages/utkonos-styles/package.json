@@ -1,0 +1,35 @@
+{
+  "name": "@relotus/utkonos-styles",
+  "version": "1.0.0",
+  "description": "Global Utkonos styles",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/react-lotus/relotus.git",
+    "directory": "packages/utkonos-styles"
+  },
+  "license": "Apache-2.0",
+  "style": "index.css",
+  "scripts": {
+    "build": "rollup --config rollup.config.ts --configPlugin rollup-plugin-typescript2"
+  },
+  "dependencies": {
+    "sanitize.css": "13.0.0"
+  },
+  "devDependencies": {
+    "@relotus/tsconfig": "1.0.0",
+    "glob": "7.1.6",
+    "postcss-import": "14.1.0",
+    "react-router-dom": "5.2.0",
+    "rollup": "2.70.1",
+    "rollup-plugin-copy": "3.4.0",
+    "rollup-plugin-delete": "2.0.0",
+    "rollup-plugin-postcss": "4.0.2",
+    "rollup-plugin-typescript2": "0.31.2",
+    "shx": "0.3.4",
+    "typescript": "4.5.5"
+  },
+  "engines": {
+    "node": "^16.0.0",
+    "npm": "^8.0.0"
+  }
+}

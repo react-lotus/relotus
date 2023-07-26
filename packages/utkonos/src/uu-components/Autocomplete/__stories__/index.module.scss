@@ -1,0 +1,33 @@
+:global(#story--controls-autocomplete--playground) {
+  margin-bottom: 150px;
+}
+
+:global(#story--controls-autocomplete--controlled-mode),
+:global(#story--controls-autocomplete--labeled),
+:global(#story--controls-autocomplete--long-list),
+:global(#story--controls-autocomplete--menu-sizing),
+:global(#story--controls-autocomplete--format-option-label),
+:global(#story--controls-autocomplete--uncontrolled-mode) {
+  margin-bottom: 250px;
+}
+
+.label {
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+
+  .label:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}

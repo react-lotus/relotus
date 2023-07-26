@@ -1,0 +1,50 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="useControlled" />
+
+# useControlled
+
+Хук для реализации контролируемого или неконтролируемого режимов.
+
+```ts
+const [value, setValue] = useControlled<number>({
+  controlled: 100,
+  default: 50,
+  onChange: onChange,
+});
+```
+
+### Аргументы
+
+| Параметр         | Тип      | Обязательный | Значение по умолчанию |
+| ---------------- | -------- | ------------ | --------------------- |
+| param            | object   | -            |                       |
+| param.controlled | unknown  | -            |                       |
+| param.loading    | unknown  | -            |                       |
+| param.onChange   | function | -            |                       |
+
+### Возвращаемые значения
+
+Массив из двух элементов:
+
+1. Текущее состояние cтейта
+1. Функция, которая установливает значение cтейта. В контроллируемом режиме использует функцию `onChange`
+
+## Пример использования
+
+```tsx
+function SomeReactComponent() {
+  const [expanded, setExpanded] = useControlled({
+    controlled,
+    default: defaultExpanded,
+    onChange,
+  });
+
+  return (
+    <Plugin name="ExpandedState">
+      <Getter name="expanded" value={expanded} />
+      <Action name="changeExpanded" action={setExpanded} />
+    </Plugin>
+  );
+}
+```

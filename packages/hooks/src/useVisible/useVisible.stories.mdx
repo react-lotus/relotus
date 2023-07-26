@@ -1,0 +1,46 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="useVisible" />
+
+# useVisible
+
+Хук возвращает текущее состояние видимости страницы.
+При переключении между вкладками web страница переходит в фоновый режим и поэтому не видна пользователю. Иногда в таком режиме нужно выполнить или запретить некоторые сайд-эффекты
+
+```ts
+const visible = useVisible();
+```
+
+### Аргументы
+
+| Параметр       | Обязательный | Значение по умолчанию |
+| -------------- | ------------ | --------------------- |
+| defaultVisible | -            | `true`                |
+
+### Возвращаемые значения
+
+Переменная, принимающая значение `true` или `false`
+
+## Пример использования
+
+```tsx
+function SomeReactComponent() {
+  const visible = useVisible();
+  const [count, setCount] = useState(0);
+
+  // показываем значение счетчика только если страница открыта и активна. если нет, то обнуляем счетчик
+  useLayoutEffect(() => {
+    const id = setInterval(() => {
+      setCount(count + 1);
+    }, 1000);
+    if (!visible) {
+      clearInterval(id);
+      setCount(0);
+    }
+
+    return () => clearInterval(id);
+  }, [count, visible]);
+
+  return <h1>{count}</h1>;
+}
+```

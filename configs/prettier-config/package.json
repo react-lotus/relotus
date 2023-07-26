@@ -1,0 +1,19 @@
+{
+  "name": "@relotus/prettier-config",
+  "version": "1.0.0",
+  "description": "Shared prettier config",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/react-lotus/relotus.git",
+    "directory": "configs/prettier-config"
+  },
+  "license": "Apache-2.0",
+  "main": ".prettierrc.json",
+  "files": [
+    ".prettierrc.json",
+    "CHANGELOG.md"
+  ],
+  "peerDependencies": {
+    "prettier": "2.7.1"
+  }
+}

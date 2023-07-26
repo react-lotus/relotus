@@ -1,0 +1,9 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px 20px;
+  /* stylelint-disable selector-nested-pattern */
+  > *:nth-child(2n-1):not(:global(.uu-button)) {
+    color: var(--black-3);
+  }
+}

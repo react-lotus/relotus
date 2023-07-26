@@ -1,0 +1,15 @@
+.uu-label {
+  color: var(--black-3);
+}
+
+.uu-label_required {
+  color: var(--red-1);
+  display: inline-block;
+  margin-left: 2px;
+}
+
+.uu-label_text {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

@@ -1,0 +1,33 @@
+.uu-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.uu-dropdownMenu {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  overflow: auto;
+}
+
+.uu-dropdownArrow {
+  transform: rotate(0deg);
+  transition: transform 0.2s;
+}
+
+.uu-dropdownArrow_open {
+  transform: rotate(180deg);
+}
+
+.uu-dropdownButton {
+  /* stylelint-disable-next-line selector-nested-pattern */
+  & > svg,
+  & > img,
+  & > picture {
+    &:nth-last-child(2):not(:first-child) {
+      margin-left: 10px;
+    }
+    &:nth-last-child(2):first-child {
+      margin-right: 0;
+    }
+  }
+}

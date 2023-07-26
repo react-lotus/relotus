@@ -1,0 +1,23 @@
+@import '../Input/index.scss';
+
+.uu-tagInput {
+  @extend .uu-input;
+  min-height: 30px;
+  height: auto !important;
+  padding: 0 10px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  flex: 1;
+}
+
+.uu-tagInput_hasError {
+  @extend .uu-input_hasError;
+}
+
+.uu-tagInputNewItem {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding-left: 10px;
+}

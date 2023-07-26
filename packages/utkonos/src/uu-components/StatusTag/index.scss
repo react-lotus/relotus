@@ -1,0 +1,45 @@
+.uu-statusTag {
+  width: max-content;
+  display: inline-block;
+  padding: 5px 14px;
+  border-radius: 99px;
+  font-size: 12px;
+  line-height: 14px;
+  color: #5a5a5a;
+}
+
+.uu-statusTag_color_green {
+  background-color: var(--st-green-1);
+}
+
+.uu-statusTag_color_navy {
+  background-color: var(--st-blue-1);
+}
+
+.uu-statusTag_color_yellow {
+  background-color: var(--st-yellow-1);
+}
+
+.uu-statusTag_color_blue {
+  background-color: var(--st-blue-2);
+}
+
+.uu-statusTag_color_purple {
+  background-color: var(--st-violet-1);
+}
+
+.uu-statusTag_color_red {
+  background-color: var(--st-red-1);
+}
+
+.uu-statusTag_color_deepPurple {
+  background-color: var(--st-violet-2);
+}
+
+.uu-statusTag_color_orange {
+  background-color: var(--st-orange-1);
+}
+
+.uu-statusTag_color_lightGreen {
+  background-color: var(--st-green-2);
+}

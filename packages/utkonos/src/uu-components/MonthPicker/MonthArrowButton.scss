@@ -1,0 +1,12 @@
+.uu-monthPicker__monthArrowButton {
+  flex: 0 0 auto;
+  background-color: white;
+  border: 1px solid var(--black-5);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  line-height: 28px;
+}
+
+.uu-monthPicker__monthArrowButton_prev {
+  transform: rotate(180deg);
+}

@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UIKIT  Password input snapshots default snapshot 1`] = `
+<div
+  className="uu-password"
+>
+  <input
+    className="uu-passwordInput"
+    id="nanoid"
+    type="password"
+  />
+  <button
+    className="uu-passwordShowIcon"
+    onClick={[Function]}
+    type="button"
+  >
+    <svg
+      className="uu-passwordShowIconSvg"
+    >
+      eyeCrossed.svg
+    </svg>
+  </button>
+</div>
+`;
+
+exports[`UIKIT  Password input snapshots whith error 1`] = `
+<div
+  className="uu-password"
+>
+  <input
+    className="uu-passwordInput uu-passwordInput_hasError"
+    id="nanoid"
+    name="testName"
+    type="password"
+  />
+  <div
+    className="uu-passwordError uu-inputError"
+  >
+    <svg
+      className="uu-inputErrorIcon uu-tooltipRoot uu-popoverRoot"
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+    >
+      error.svg
+    </svg>
+  </div>
+  <button
+    className="uu-passwordShowIcon"
+    onClick={[Function]}
+    type="button"
+  >
+    <svg
+      className="uu-passwordShowIconSvg"
+    >
+      eyeCrossed.svg
+    </svg>
+  </button>
+</div>
+`;
+
+exports[`UIKIT  Password input snapshots with lable snapshot 1`] = `
+<div
+  className="uu-labeled_direction_column"
+>
+  <label
+    aria-label="test"
+    className="uu-labeledLabel_direction_column uu-label uu-label_text"
+    htmlFor="nanoid"
+  >
+    test
+  </label>
+  <div
+    className="uu-password"
+  >
+    <input
+      className="uu-passwordInput"
+      id="nanoid"
+      type="password"
+    />
+    <button
+      className="uu-passwordShowIcon"
+      onClick={[Function]}
+      type="button"
+    >
+      <svg
+        className="uu-passwordShowIconSvg"
+      >
+        eyeCrossed.svg
+      </svg>
+    </button>
+  </div>
+</div>
+`;

@@ -1,0 +1,1 @@
+export { bindInterceptor } from './interceptor';

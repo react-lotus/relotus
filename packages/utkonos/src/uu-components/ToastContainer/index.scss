@@ -1,0 +1,51 @@
+// Переопределяем переменные для react-toastify
+
+$rt-toast-width: 380px;
+$rt-toast-min-height: 64px;
+$rt-toast-max-height: 800px;
+
+$rt-text-color-default: var(--white-1);
+
+$rt-color-default: var(--blue-1);
+$rt-color-info: var(--blue-1);
+$rt-color-success: var(--green-2);
+$rt-color-warning: var(--yellow-2);
+$rt-color-error: var(--red-1);
+
+$rt-color-progress-default: rgba(255, 255, 255, 0.7);
+
+@import '~react-toastify/scss/variables';
+@import '~react-toastify/scss/toastContainer';
+@import '~react-toastify/scss/toast';
+@import '~react-toastify/scss/closeButton';
+@import '~react-toastify/scss/progressBar';
+
+@import '~react-toastify/scss/animations/bounce.scss';
+@import '~react-toastify/scss/animations/zoom.scss';
+@import '~react-toastify/scss/animations/flip.scss';
+@import '~react-toastify/scss/animations/slide.scss';
+
+.uu-toast {
+  padding: 18px 20px;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.uu-toast__container {
+  padding: 0;
+}
+
+.uu-toast__body {
+  padding: 0;
+  margin: 0;
+  margin-right: 30px;
+  font-size: 14px;
+  font-family: Rubik, sans-serif;
+  font-weight: 400;
+}
+
+.uu-toast__close {
+  flex: none;
+  align-self: flex-start;
+}

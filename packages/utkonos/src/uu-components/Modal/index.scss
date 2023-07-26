@@ -1,0 +1,39 @@
+.uu-modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-height: 600px;
+  min-width: 1200px;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  display: flex;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  transition: opacity 100ms ease-in-out;
+  z-index: 2;
+}
+
+.uu-modalOverlay_afterOpen {
+  opacity: 1;
+}
+
+.uu-modalOverlay_beforeClose {
+  opacity: 0;
+}
+
+.uu-modalContent {
+  border-radius: 10px;
+  box-shadow: 0 0 10px 1px #00000030;
+  background-color: var(--white-1);
+  position: relative;
+  margin: auto;
+  overflow: auto;
+  display: flex;
+  flex-flow: column nowrap;
+  outline: none;
+  max-height: calc(100vh - 40px);
+  min-width: 150px;
+  min-height: 100px;
+}

@@ -1,0 +1,15 @@
+{
+  "ignoreFiles": ["**/*"],
+  "extends": ["@relotus/stylelint-config"],
+  "overrides": [
+    {
+      "files": ["**/*.css"],
+      "rules": {}
+    },
+    {
+      "files": ["**/*.scss"],
+      "rules": {}
+    }
+  ],
+  "rules": {}
+}

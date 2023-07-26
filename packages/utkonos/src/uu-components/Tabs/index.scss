@@ -1,0 +1,79 @@
+.uu-tabs {
+  display: inline-flex;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 500;
+}
+
+.uu-tabs_direction_row {
+  border-bottom: 1px solid var(--black-5);
+  width: 100%;
+  min-height: 46px;
+}
+
+.uu-tabs_direction_column {
+  flex-direction: column;
+  border-right: 1px solid var(--black-5);
+  justify-content: stretch;
+  background-color: var(--black-7);
+  color: var(--black-1);
+}
+
+.uu-tabsInput {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+}
+
+.uu-tabsLabel {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100px;
+  cursor: pointer;
+  user-select: none;
+  flex-direction: row;
+}
+
+.uu-tabsLabel_checked {
+  cursor: inherit;
+}
+
+.uu-tabsLabel_direction_row {
+  color: var(--green-2);
+  text-align: center;
+  padding: 15px 30px;
+  border-right: 1px solid var(--black-5);
+}
+
+.uu-tabsLabel_direction_row.uu-tabsLabel_checked {
+  color: var(--black-2);
+}
+
+.uu-tabsLabel_direction_row.uu-tabsLabel_checked,
+.uu-tabsLabel_direction_row:hover {
+  border-bottom: 3px solid var(--green-2);
+  padding-bottom: 12px;
+}
+
+.uu-tabsLabel_direction_column {
+  border-bottom: 1px solid var(--black-5);
+  color: var(--black-1);
+  padding: 1px;
+  text-align: left;
+}
+
+.uu-tabsLabelText {
+  flex-grow: 1;
+}
+
+.uu-tabsLabelText_direction_column {
+  padding: 16px 20px;
+}
+.uu-tabsLabelText_direction_column.uu-tabsLabelText_checked {
+  background-color: var(--yellow-1);
+}

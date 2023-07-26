@@ -1,0 +1,7 @@
+.uu-selectArrow {
+  transition-duration: 0.2s;
+  transition-property: transform;
+}
+.uu-selectArrow_up {
+  transform: rotate(-180deg);
+}

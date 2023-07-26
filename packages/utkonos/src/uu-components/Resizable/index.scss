@@ -1,0 +1,28 @@
+.uu-resizableRow {
+  margin-left: 10px;
+}
+
+.uu-resizableColumn {
+  margin-top: 10px;
+}
+
+.uu-resizableBarRow {
+  left: -8px !important;
+
+  &::after {
+    content: url('./assets/draggableRow.svg');
+    position: absolute;
+    top: 50%;
+    left: 1px;
+  }
+}
+
+.uu-resizableBarColumn {
+  top: -16px !important;
+
+  &::after {
+    content: url('./assets/draggableColumn.svg');
+    position: absolute;
+    left: 50%;
+  }
+}

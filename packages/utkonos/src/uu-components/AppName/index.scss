@@ -1,0 +1,28 @@
+.uu-appName {
+  padding: 0 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  height: 64px;
+
+  text-decoration: none;
+  color: var(--black-2);
+
+  cursor: pointer;
+  user-select: none;
+
+  &:active {
+    transform: translate(1px, 1px);
+  }
+}
+
+.uu-appNameTitle {
+  $title-font-size: 9px;
+  $title-padding-top: 7px;
+
+  padding-top: $title-padding-top;
+  line-height: $title-font-size;
+  font-size: $title-font-size;
+  height: $title-font-size + $title-padding-top;
+}

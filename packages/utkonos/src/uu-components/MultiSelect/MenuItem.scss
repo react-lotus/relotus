@@ -1,0 +1,30 @@
+.uu-multiSelectMenuItem {
+  min-height: 30px;
+  padding: 0 15px;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  color: var(--black-2);
+
+  &:last-child {
+    margin-bottom: 0px;
+  }
+}
+
+.uu-multiSelectMenuItem_highlighted {
+  background-color: #e1f5e9;
+}
+
+.uu-multiSelectMenuItem_disabled {
+  cursor: auto;
+}
+
+.uu-multiSelectMenuCheckbox {
+  padding-right: 9px;
+}
+
+.uu-multiSelectMenuCheckbox .uu-checkboxMark {
+  flex-shrink: 0;
+}

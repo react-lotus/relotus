@@ -1,0 +1,28 @@
+.uu-tagInputTagText_isEditing {
+  position: relative;
+  text-overflow: initial;
+  margin: 0 -4px;
+}
+
+.uu-tagInputTagValue_isEditable {
+  color: var(--green-2);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  display: flow-root;
+}
+
+.uu-tagInputTagValue_isHidden {
+  visibility: hidden;
+  position: absolute;
+}
+
+.uu-tagInputTagInput {
+  background: var(--white-1);
+  font-size: inherit;
+  padding: 0 4px;
+  border: none;
+  outline: none;
+  line-height: 18px;
+  height: 18px;
+}

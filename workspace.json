@@ -1,0 +1,17 @@
+{
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json",
+  "version": 2,
+  "projects": {
+    "eslint-config": "configs/eslint-config",
+    "hooks": "packages/hooks",
+    "keycloak": "packages/keycloak",
+    "prettier-config": "configs/prettier-config",
+    "store": "packages/store",
+    "storybook": "packages/storybook",
+    "stylelint-config": "configs/stylelint-config",
+    "tsconfig": "configs/tsconfig",
+    "utils": "packages/utils",
+    "utkonos": "packages/utkonos",
+    "utkonos-styles": "packages/utkonos-styles"
+  }
+}

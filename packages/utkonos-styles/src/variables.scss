@@ -1,0 +1,8 @@
+:root {
+  // Цвет фона для грида
+  --uu-grid-background: #fff;
+  // Цвет фона для фиксированной ячейки
+  --uu-tableFixedCell-background: var(--uu-grid-background);
+  // размер отступов у элементов в Toolbar
+  --uu-toolbar-gap: 10px;
+}

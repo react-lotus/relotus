@@ -1,0 +1,45 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="useBooleanState" />
+
+# useBooleanState
+
+Хук для более удобного управления состоянием, в котором хранится булево значение.
+
+```ts
+const [isTrue, setTrue, setFalse, toggle] = useBooleanState(defaultValue);
+```
+
+### Аргументы
+
+| Параметр     | Обязательный | Значение по умолчанию |
+| ------------ | ------------ | --------------------- |
+| defaultValue | -            | `false`               |
+
+### Возвращаемые значения
+
+Массив из четырёх элементов:
+
+1. Текущее состояние cтейта
+1. Функция чтобы установить значение cтейта в `true`
+1. Функция чтобы установить значение cтейта в `false`
+1. Функция чтобы установить значение cтейта, обратное текущему
+
+Для простоты запоминания порядок следования элементов такой же как в тернарном операторе
+
+## Пример использования
+
+```tsx
+function SomeReactComponent() {
+  const [isModalOpen, showModal, hideModal] = useBooleanState();
+
+  return (
+    <>
+      <Button onClick={showModal}>Открыть модальное окно</Button>
+      <Modal isOpen={isModalOpen} onRequestClose={hideModal}>
+        ⚛️ React is awesome!
+      </Modal>
+    </>
+  );
+}
+```

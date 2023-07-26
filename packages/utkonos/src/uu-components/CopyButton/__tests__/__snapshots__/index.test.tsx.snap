@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Copy Button component should render square button by default 1`] = `
+<button
+  class="uu-button uu-button_view_light uu-button_square"
+  role="button"
+  type="button"
+>
+  <svg>
+    copy-icon.svg
+  </svg>
+</button>
+`;

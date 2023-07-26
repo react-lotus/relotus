@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Uikit/Radio snapshot checked 1`] = `
+<label
+  className="uu-radio"
+  htmlFor="nanoid"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <input
+    checked={true}
+    className="uu-radioInput"
+    id="nanoid"
+    type="radio"
+    value="value"
+  />
+  <span
+    className="uu-radioMark"
+  >
+    <span
+      className="uu-radioMarkPoint uu-radioMarkPoint_checked"
+    />
+  </span>
+</label>
+`;
+
+exports[`Uikit/Radio snapshot default 1`] = `
+<label
+  className="uu-radio"
+  htmlFor="nanoid"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <input
+    className="uu-radioInput"
+    id="nanoid"
+    type="radio"
+    value="value"
+  />
+  <span
+    className="uu-radioMark"
+  >
+    <span
+      className="uu-radioMarkPoint"
+    />
+  </span>
+</label>
+`;
+
+exports[`Uikit/Radio snapshot disabled 1`] = `
+<label
+  className="uu-radio uu-radio_disabled"
+  htmlFor="nanoid"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <input
+    className="uu-radioInput"
+    disabled={true}
+    id="nanoid"
+    type="radio"
+  />
+  <span
+    className="uu-radioMark"
+  >
+    <span
+      className="uu-radioMarkPoint uu-radioMarkPoint_disabled"
+    />
+  </span>
+</label>
+`;
+
+exports[`Uikit/Radio snapshot disabled checked 1`] = `
+<label
+  className="uu-radio uu-radio_disabled"
+  htmlFor="nanoid"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <input
+    className="uu-radioInput"
+    defaultChecked={true}
+    disabled={true}
+    id="nanoid"
+    type="radio"
+  />
+  <span
+    className="uu-radioMark"
+  >
+    <span
+      className="uu-radioMarkPoint uu-radioMarkPoint_disabled"
+    />
+  </span>
+</label>
+`;

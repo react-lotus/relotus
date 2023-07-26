@@ -1,0 +1,13 @@
+.uu-panelCardFooter {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #d7d7d7;
+  padding: 20px;
+  box-shadow: 0 -5px 6px 0 rgba(0, 0, 0, 0.03);
+  background-color: white;
+  gap: 10px;
+}
+
+.uu-panelCardFooter_withoutGap {
+  gap: 0;
+}

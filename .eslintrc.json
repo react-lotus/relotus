@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json.schemastore.org/eslintrc",
+  "root": true,
+  "extends": ["@relotus/eslint-config"],
+  "ignorePatterns": ["**/*"],
+  "plugins": ["@nrwl/nx", "only-warn"],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "rules": {
+        "@nrwl/nx/enforce-module-boundaries": [
+          "error",
+          {
+            "enforceBuildableLibDependency": true,
+            "allow": [],
+            "depConstraints": [
+              {
+                "sourceTag": "*",
+                "onlyDependOnLibsWithTags": ["*"]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["*.ts", "*.tsx"],
+      "extends": ["plugin:@nrwl/nx/typescript"],
+      "rules": {}
+    },
+    {
+      "files": ["*.js", "*.jsx"],
+      "extends": ["plugin:@nrwl/nx/javascript"],
+      "rules": {}
+    },
+    {
+      "files": ["**/.storybook/**/*"],
+      "rules": {
+        "import/no-relative-packages": "off",
+        "import/no-extraneous-dependencies": [
+          "warn",
+          {
+            "devDependencies": true
+          }
+        ],
+        "no-param-reassign": [
+          "error",
+          {
+            "props": true,
+            "ignorePropertyModificationsFor": ["acc", "webpackConfig"]
+          }
+        ]
+      }
+    }
+  ]
+}

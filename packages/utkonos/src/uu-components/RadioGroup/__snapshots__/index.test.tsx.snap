@@ -1,0 +1,260 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Uikit/RadioGroup snapshot default 1`] = `
+<div
+  className="uu-radioGroup uu-radioGroup_direction_row"
+  tabIndex={-1}
+>
+  <label
+    aria-label="label1"
+    className="uu-radio"
+    htmlFor="nanoid"
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  >
+    <input
+      checked={false}
+      className="uu-radioInput"
+      id="nanoid"
+      name="nanoid"
+      type="radio"
+      value="value1"
+    />
+    <span
+      className="uu-radioMark"
+    >
+      <span
+        className="uu-radioMarkPoint"
+      />
+    </span>
+    <span
+      className="uu-radioLabel"
+    >
+      label1
+    </span>
+  </label>
+  <label
+    aria-label="label2"
+    className="uu-radio"
+    htmlFor="nanoid"
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  >
+    <input
+      checked={false}
+      className="uu-radioInput"
+      id="nanoid"
+      name="nanoid"
+      type="radio"
+      value="value2"
+    />
+    <span
+      className="uu-radioMark"
+    >
+      <span
+        className="uu-radioMarkPoint"
+      />
+    </span>
+    <span
+      className="uu-radioLabel"
+    >
+      label2
+    </span>
+  </label>
+</div>
+`;
+
+exports[`Uikit/RadioGroup snapshot default value 1`] = `
+<div
+  className="uu-radioGroup uu-radioGroup_direction_row"
+  tabIndex={-1}
+>
+  <label
+    aria-label="label1"
+    className="uu-radio"
+    htmlFor="nanoid"
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  >
+    <input
+      checked={true}
+      className="uu-radioInput"
+      id="nanoid"
+      name="nanoid"
+      type="radio"
+      value="value1"
+    />
+    <span
+      className="uu-radioMark"
+    >
+      <span
+        className="uu-radioMarkPoint uu-radioMarkPoint_checked"
+      />
+    </span>
+    <span
+      className="uu-radioLabel"
+    >
+      label1
+    </span>
+  </label>
+  <label
+    aria-label="label2"
+    className="uu-radio"
+    htmlFor="nanoid"
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  >
+    <input
+      checked={false}
+      className="uu-radioInput"
+      id="nanoid"
+      name="nanoid"
+      type="radio"
+      value="value2"
+    />
+    <span
+      className="uu-radioMark"
+    >
+      <span
+        className="uu-radioMarkPoint"
+      />
+    </span>
+    <span
+      className="uu-radioLabel"
+    >
+      label2
+    </span>
+  </label>
+</div>
+`;
+
+exports[`Uikit/RadioGroup snapshot disabled 1`] = `
+<div
+  className="uu-radioGroup uu-radioGroup_direction_row"
+  tabIndex={-1}
+>
+  <label
+    aria-label="label1"
+    className="uu-radio uu-radio_disabled"
+    htmlFor="nanoid"
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  >
+    <input
+      checked={false}
+      className="uu-radioInput"
+      disabled={true}
+      id="nanoid"
+      name="nanoid"
+      type="radio"
+      value="value1"
+    />
+    <span
+      className="uu-radioMark"
+    >
+      <span
+        className="uu-radioMarkPoint uu-radioMarkPoint_disabled"
+      />
+    </span>
+    <span
+      className="uu-radioLabel uu-radioLabel_disabled"
+    >
+      label1
+    </span>
+  </label>
+  <label
+    aria-label="label2"
+    className="uu-radio uu-radio_disabled"
+    htmlFor="nanoid"
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  >
+    <input
+      checked={false}
+      className="uu-radioInput"
+      disabled={true}
+      id="nanoid"
+      name="nanoid"
+      type="radio"
+      value="value2"
+    />
+    <span
+      className="uu-radioMark"
+    >
+      <span
+        className="uu-radioMarkPoint uu-radioMarkPoint_disabled"
+      />
+    </span>
+    <span
+      className="uu-radioLabel uu-radioLabel_disabled"
+    >
+      label2
+    </span>
+  </label>
+</div>
+`;
+
+exports[`Uikit/RadioGroup snapshot only one item disabled 1`] = `
+<div
+  className="uu-radioGroup uu-radioGroup_direction_row"
+  tabIndex={-1}
+>
+  <label
+    aria-label="label1"
+    className="uu-radio"
+    htmlFor="nanoid"
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  >
+    <input
+      checked={false}
+      className="uu-radioInput"
+      id="nanoid"
+      name="nanoid"
+      type="radio"
+      value="value1"
+    />
+    <span
+      className="uu-radioMark"
+    >
+      <span
+        className="uu-radioMarkPoint"
+      />
+    </span>
+    <span
+      className="uu-radioLabel"
+    >
+      label1
+    </span>
+  </label>
+  <label
+    aria-label="label2"
+    className="uu-radio uu-radio_disabled"
+    htmlFor="nanoid"
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  >
+    <input
+      checked={false}
+      className="uu-radioInput"
+      disabled={true}
+      id="nanoid"
+      name="nanoid"
+      type="radio"
+      value="value2"
+    />
+    <span
+      className="uu-radioMark"
+    >
+      <span
+        className="uu-radioMarkPoint uu-radioMarkPoint_disabled"
+      />
+    </span>
+    <span
+      className="uu-radioLabel uu-radioLabel_disabled"
+    >
+      label2
+    </span>
+  </label>
+</div>
+`;

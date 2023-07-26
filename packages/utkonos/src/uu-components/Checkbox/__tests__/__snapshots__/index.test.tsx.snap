@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Uikit/Checkbox snapshot checked 1`] = `
+<label
+  className="uu-checkbox"
+  htmlFor="nanoid"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <input
+    className="uu-checkboxInput"
+    defaultChecked={true}
+    id="nanoid"
+    type="checkbox"
+  />
+  <span
+    aria-checked={false}
+    className="uu-checkboxMark"
+    role="checkbox"
+  />
+</label>
+`;
+
+exports[`Uikit/Checkbox snapshot default 1`] = `
+<label
+  className="uu-checkbox"
+  htmlFor="nanoid"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <input
+    className="uu-checkboxInput"
+    id="nanoid"
+    type="checkbox"
+  />
+  <span
+    aria-checked={false}
+    className="uu-checkboxMark"
+    role="checkbox"
+  />
+</label>
+`;
+
+exports[`Uikit/Checkbox snapshot disabled 1`] = `
+<label
+  className="uu-checkbox uu-checkbox_disabled"
+  htmlFor="nanoid"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <input
+    className="uu-checkboxInput"
+    disabled={true}
+    id="nanoid"
+    type="checkbox"
+  />
+  <span
+    aria-checked={false}
+    className="uu-checkboxMark uu-checkboxMark_disabled"
+    role="checkbox"
+  />
+</label>
+`;
+
+exports[`Uikit/Checkbox snapshot disabled checked 1`] = `
+<label
+  className="uu-checkbox uu-checkbox_disabled"
+  htmlFor="nanoid"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <input
+    className="uu-checkboxInput"
+    defaultChecked={true}
+    disabled={true}
+    id="nanoid"
+    type="checkbox"
+  />
+  <span
+    aria-checked={false}
+    className="uu-checkboxMark uu-checkboxMark_disabled"
+    role="checkbox"
+  />
+</label>
+`;

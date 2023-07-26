@@ -1,0 +1,58 @@
+{
+  "name": "@relotus/keycloak",
+  "version": "1.0.0",
+  "description": "react keycloak package",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/react-lotus/relotus.git",
+    "directory": "packages/keycloak"
+  },
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@react-keycloak/core": "3.2.0",
+    "@react-keycloak/web": "3.4.0",
+    "events": "3.3.0",
+    "keycloak-js": "15.0.2",
+    "redux-saga": "1.1.3"
+  },
+  "devDependencies": {
+    "@relotus/tsconfig": "1.0.0",
+    "@testing-library/jest-dom": "5.16.4",
+    "@testing-library/react": "12.1.5",
+    "@testing-library/react-hooks": "8.0.0",
+    "@types/events": "3.0.0",
+    "@types/jest": "28.1.2",
+    "@types/react": "17.0.45",
+    "axios": "0.27.2",
+    "events": "3.3.0",
+    "jest": "28.1.1",
+    "jest-environment-jsdom": "28.1.1",
+    "jest-extended": "2.0.0",
+    "react": "17.0.2",
+    "ts-jest": "28.0.5"
+  },
+  "peerDependencies": {
+    "@react-keycloak/core": "3.2.0",
+    "@react-keycloak/web": "3.4.0",
+    "axios": "0.27.2",
+    "jest": ">=26.0.0",
+    "keycloak-js": "15.0.2",
+    "react": ">=16.0.0 <18.0.0",
+    "redux-saga": "1.1.3"
+  },
+  "peerDependenciesMeta": {
+    "@jest/globals": {
+      "optional": true
+    },
+    "axios": {
+      "optional": true
+    },
+    "jest": {
+      "optional": true
+    }
+  },
+  "engines": {
+    "node": "^16.0.0",
+    "npm": "^8.0.0"
+  }
+}

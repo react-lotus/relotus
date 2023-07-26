@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PanelCard snapshot should match PanelCard with Header, Body and Footer 1`] = `
+<div
+  className="uu-panelCard uu-scrollbar"
+>
+  <div
+    className="uu-panelCardHeader"
+  >
+    <h2
+      className="uu-panelCardTitle"
+    >
+      Header
+    </h2>
+  </div>
+  <div
+    className="uu-panelCardBody"
+  >
+    Body
+  </div>
+  <div
+    className="uu-panelCardFooter"
+  >
+    Footer
+  </div>
+</div>
+`;
+
+exports[`PanelCard snapshot should match PanelCard with custom header 1`] = `
+<div
+  className="uu-panelCard uu-scrollbar"
+>
+  <div
+    className="uu-panelCardHeader"
+  >
+    <span>
+      Header
+    </span>
+  </div>
+</div>
+`;

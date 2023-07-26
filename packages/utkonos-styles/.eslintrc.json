@@ -1,0 +1,24 @@
+{
+  "extends": ["../../.eslintrc.json"],
+  "ignorePatterns": ["!**/*"],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "rules": {}
+    },
+    {
+      "files": ["*.ts", "*.tsx"],
+      "parserOptions": {
+        "project": [
+          "packages/utkonos-styles/tsconfig.json",
+          "packages/utkonos-styles/.storybook/tsconfig.json"
+        ]
+      },
+      "rules": {}
+    },
+    {
+      "files": ["*.js", "*.jsx"],
+      "rules": {}
+    }
+  ]
+}

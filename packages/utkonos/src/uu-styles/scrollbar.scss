@@ -1,0 +1,22 @@
+[class^='uu-'],
+.uu-scrollbar {
+  ::-webkit-scrollbar {
+    width: 15px;
+    height: 15px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f4f4f4;
+    border-bottom-right-radius: inherit;
+    border-top-right-radius: inherit;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #a3ddba;
+    border-radius: 7.5px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--green-3);
+  }
+}

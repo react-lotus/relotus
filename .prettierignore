@@ -1,0 +1,12 @@
+node_modules/
+/packages/*/build
+/packages/*/dist
+/packages/*/lib
+/packages/*/styles
+/packages/*/storybook-static
+/packages/utkonos/hooks
+package-lock.json
+CHANGELOG.md
+gitlab-ci
+.gitlab-ci.yml
+package.json

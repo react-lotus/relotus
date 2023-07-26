@@ -1,0 +1,18 @@
+.size {
+  display: flex;
+  flex-direction: row;
+}
+
+.showButton {
+  margin-bottom: 10px;
+}
+
+.showBox {
+  display: flex;
+  flex-direction: row;
+}
+
+.showAbsoluteButton {
+  margin-bottom: 10px;
+  z-index: 1;
+}

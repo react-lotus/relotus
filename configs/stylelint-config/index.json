@@ -1,0 +1,28 @@
+{
+  "extends": [
+    "stylelint-config-recommended-scss",
+    "stylelint-config-css-modules",
+    "stylelint-config-prettier"
+  ],
+  "plugins": ["stylelint-z-index-value-constraint"],
+  "rules": {
+    "color-hex-case": "lower",
+    "color-hex-length": "short",
+    "declaration-empty-line-before": "never",
+    "font-weight-notation": "numeric",
+    "max-nesting-depth": 3,
+    "no-invalid-position-at-import-rule": null,
+    "plugin/z-index-value-constraint": { "max": 5 },
+    "scss/comment-no-empty": true,
+    "scss/comment-no-loud": true,
+    "scss/double-slash-comment-whitespace-inside": "always",
+    "scss/selector-no-redundant-nesting-selector": true,
+    "length-zero-no-unit": true,
+    "font-family-no-missing-generic-family-keyword": [
+      true,
+      {
+        "ignoreFontFamilies": ["Rubik"]
+      }
+    ]
+  }
+}

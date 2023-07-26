@@ -1,0 +1,198 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UIKIT | Input NEW Snapshots default 1`] = `
+<div
+  className="uu-inputBox"
+>
+  <input
+    className="uu-input"
+    id="nanoid"
+    name="testName"
+    onChange={[MockFunction]}
+  />
+</div>
+`;
+
+exports[`UIKIT | Input NEW Snapshots disabled 1`] = `
+<div
+  className="uu-inputBox"
+>
+  <input
+    className="uu-input"
+    disabled={true}
+    id="nanoid"
+    name="testName"
+    onChange={[MockFunction]}
+  />
+  <div
+    className="uu-fieldAddon uu-inputAddon"
+  >
+    <svg
+      className="uu-fieldAddonDisabled"
+    >
+      lock.svg
+    </svg>
+  </div>
+</div>
+`;
+
+exports[`UIKIT | Input NEW Snapshots disabled with suffix 1`] = `
+<div
+  className="uu-inputBox"
+>
+  <input
+    className="uu-input"
+    disabled={true}
+    id="nanoid"
+    name="testName"
+    onChange={[MockFunction]}
+  />
+  <div
+    className="uu-fieldAddon uu-inputAddon"
+  >
+    <span
+      className="uu-fieldAddonSuffix"
+    >
+      Руб
+    </span>
+    <svg
+      className="uu-fieldAddonDisabled"
+    >
+      lock.svg
+    </svg>
+  </div>
+</div>
+`;
+
+exports[`UIKIT | Input NEW Snapshots disabled with suffix and Error 1`] = `
+<div
+  className="uu-inputBox"
+>
+  <input
+    className="uu-input uu-input_hasError"
+    disabled={true}
+    id="nanoid"
+    name="testName"
+    onChange={[MockFunction]}
+  />
+  <div
+    className="uu-fieldAddon uu-inputAddon"
+  >
+    <span
+      className="uu-fieldAddonSuffix"
+    >
+      Руб
+    </span>
+    <svg
+      className="uu-fieldAddonDisabled"
+    >
+      lock.svg
+    </svg>
+  </div>
+  <div
+    className="uu-inputError"
+  >
+    <svg
+      className="uu-inputErrorIcon uu-tooltipRoot uu-popoverRoot"
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+    >
+      error.svg
+    </svg>
+  </div>
+</div>
+`;
+
+exports[`UIKIT | Input NEW Snapshots labeled column 1`] = `
+<div
+  className="uu-labeled_direction_column"
+>
+  <label
+    aria-label="labeled"
+    className="uu-labeledLabel_direction_column uu-label uu-label_text"
+    htmlFor="nanoid"
+  >
+    labeled
+  </label>
+  <div
+    className="uu-inputBox"
+  >
+    <input
+      className="uu-input"
+      id="nanoid"
+      name="testName"
+      onChange={[MockFunction]}
+    />
+  </div>
+</div>
+`;
+
+exports[`UIKIT | Input NEW Snapshots labeled row 1`] = `
+<div
+  className="uu-labeled_direction_column"
+>
+  <label
+    aria-label="labeled"
+    className="uu-labeledLabel_direction_column uu-label uu-label_text"
+    htmlFor="nanoid"
+  >
+    labeled
+  </label>
+  <div
+    className="uu-inputBox"
+  >
+    <input
+      className="uu-input"
+      id="nanoid"
+      name="testName"
+      onChange={[MockFunction]}
+    />
+  </div>
+</div>
+`;
+
+exports[`UIKIT | Input NEW Snapshots with error 1`] = `
+<div
+  className="uu-inputBox"
+>
+  <input
+    className="uu-input uu-input_hasError"
+    id="nanoid"
+    name="testName"
+    onChange={[MockFunction]}
+  />
+  <div
+    className="uu-inputError"
+  >
+    <svg
+      className="uu-inputErrorIcon uu-tooltipRoot uu-popoverRoot"
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+    >
+      error.svg
+    </svg>
+  </div>
+</div>
+`;
+
+exports[`UIKIT | Input NEW Snapshots with suffix 1`] = `
+<div
+  className="uu-inputBox"
+>
+  <input
+    className="uu-input"
+    id="nanoid"
+    name="testName"
+    onChange={[MockFunction]}
+  />
+  <div
+    className="uu-fieldAddon uu-inputAddon"
+  >
+    <span
+      className="uu-fieldAddonSuffix"
+    >
+      Руб
+    </span>
+  </div>
+</div>
+`;

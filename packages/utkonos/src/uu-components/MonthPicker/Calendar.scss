@@ -1,0 +1,48 @@
+.uu-monthPicker__calendar .uu-popoverContent {
+  padding: 0;
+}
+
+.uu-monthPicker__calendarHead {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.uu-monthPicker__calendarWrapper {
+  width: 278px;
+  padding: 20px;
+}
+
+.uu-monthPicker__calendarYear {
+  font-size: 18px;
+  line-height: 21px;
+  font-weight: 600;
+  color: var(--black-2);
+  flex: 1 0 auto;
+  text-align: center;
+}
+
+.uu-monthPicker__calendarMain {
+  display: grid;
+  gap: 2px;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.uu-monthPicker__calendarMonth {
+  font-weight: 400;
+  color: var(--black-2);
+  padding-left: 5px;
+  padding-right: 5px;
+
+  &:before {
+    border: none;
+    background-color: var(--black-7);
+  }
+}
+
+.uu-monthPicker__calendarMonth_active {
+  &:before {
+    background-color: #e1f5e9;
+  }
+}

@@ -1,0 +1,54 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="useIntervalPolling" />
+
+# useIntervalPolling
+
+Хук для поллинга(опроса).
+Опрос — это метод, при котором мы проверяем наличие свежих данных за заданный интервал, периодически отправляя API-запросы на сервер. Например, мы можем использовать опрос, если есть данные, которые часто меняются, или нам нужно дождаться перехода сервера в заданное состояние. Опрос — это простая альтернатива веб-сокетам или серверным событиям.
+
+```ts
+useIntervalPolling({ load, loading, loadOnUpdate });
+```
+
+### Аргументы
+
+| Параметр           | Тип      | Обязательный | Значение по умолчанию |
+| ------------------ | -------- | ------------ | --------------------- |
+| param              | object   | +            |                       |
+| param.load         | function | +            |                       |
+| param.loading      | boolean  | +            |                       |
+| param.loadOnUpdate | function | -            |                       |
+| param.ms           | number   | -            | 30000                 |
+| deps               | array    | -            |                       |
+
+## Пример использования
+
+```tsx
+function SomeReactComponent() {
+
+  const loading = useSelector(select.loading);
+  const id = useSelector(selectId);
+  const data = useSelector(selectData);
+
+  const load = useCallback(() => {
+    if (id) {
+      loadData({ id });
+    }
+  }, [id, loadData]);
+
+  const loadOnUpdate = useCallback(() => {
+    if (id) {
+      loadDataWithoutSpinner({ id });
+    }
+  }, [id, loadDataWithoutSpinner]);
+
+  useIntervalPolling({ load, loading, loadOnUpdate }, [load, loadOnUpdate]);
+
+  return (
+    <main>
+      {data.map(items) => <div>{item}</div>}
+    </main>
+  );
+}
+```

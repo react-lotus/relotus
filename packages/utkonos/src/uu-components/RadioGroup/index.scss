@@ -1,0 +1,17 @@
+.uu-radioGroup {
+  display: inline-flex;
+}
+.uu-radioGroup_direction_row {
+  /* stylelint-disable-next-line selector-nested-pattern */
+  & > *:not(:last-child) {
+    margin-right: 12px;
+  }
+}
+.uu-radioGroup_direction_column {
+  flex-direction: column;
+
+  /* stylelint-disable-next-line selector-nested-pattern */
+  & > *:not(:last-child) {
+    margin-bottom: 12px;
+  }
+}

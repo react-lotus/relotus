@@ -1,0 +1,40 @@
+$sidebarWidth: 60px;
+
+.uu-sidebarMenu__backdrop {
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: $sidebarWidth;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.uu-sidebarMenu__wrapper {
+  position: absolute;
+  background-color: var(--white-1);
+  top: 0;
+  min-width: 200px;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+
+  &::before {
+    $shadowWidth: 21px;
+    content: '';
+    background: linear-gradient(270deg, rgba(0, 0, 0, 0.12) 0%, rgba(255, 255, 255, 2e-5) 51.01%);
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+    position: absolute;
+    height: 100%;
+    width: $shadowWidth;
+    right: -1 * $shadowWidth;
+    top: 0;
+  }
+}
+
+.uu-sidebarMenu {
+  border-top: 1px solid var(--black-6);
+  flex: 1;
+  overflow: auto;
+}

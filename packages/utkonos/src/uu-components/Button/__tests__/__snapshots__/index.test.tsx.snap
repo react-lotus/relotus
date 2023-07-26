@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button component should button have a loading animation 1`] = `
+<button
+  class="uu-button uu-button_view_primary uu-button_loading"
+  disabled=""
+  type="button"
+>
+  loading
+</button>
+`;
+
+exports[`Button component should render as RouterLink 1`] = `
+<a
+  class="uu-button uu-button_view_primary"
+  href="/"
+>
+  Router Link
+</a>
+`;
+
+exports[`Button component should render empty button without errors 1`] = `
+<button
+  class="uu-button uu-button_view_primary"
+  role="button"
+  type="button"
+/>
+`;
+
+exports[`Button component should render small button 1`] = `
+<button
+  class="uu-button uu-button_view_primary uu-button_small"
+  type="button"
+>
+  Small
+</button>
+`;

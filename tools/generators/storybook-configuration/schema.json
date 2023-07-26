@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "cli": "nx",
+  "$id": "storybook-configuration",
+  "title": "Storybook конфигурация",
+  "description": "Добавление Storybook конфигрурации в библиотечный пакет",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "aliases": ["project", "projectName"],
+      "description": "Название библиотечного пакета",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "В какой пакет хотите добавить Storybook конфигурацию?",
+      "x-dropdown": "projects"
+    }
+  },
+  "required": ["name"]
+}

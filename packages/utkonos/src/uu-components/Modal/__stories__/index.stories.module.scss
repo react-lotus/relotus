@@ -1,0 +1,14 @@
+.modalPreview {
+  min-height: 300px;
+  min-width: 998px;
+  height: 100%;
+  width: 100%;
+
+  padding: 20px;
+
+  :global(.uu-modal__overlay) {
+    position: absolute;
+    min-height: 300px;
+    min-width: 998px;
+  }
+}

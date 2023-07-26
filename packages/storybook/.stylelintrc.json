@@ -1,0 +1,17 @@
+{
+  "extends": ["../../.stylelintrc.json"],
+  "ignoreFiles": ["!**/*"],
+  "overrides": [
+    {
+      "files": ["**/*.css"],
+      "rules": {}
+    },
+    {
+      "files": ["**/*.scss"],
+      "rules": {}
+    }
+  ],
+  "rules": {
+    "selector-class-pattern": "^sb-[a-z][a-zA-Z0-9]+$"
+  }
+}

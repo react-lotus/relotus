@@ -1,0 +1,115 @@
+$normal-color: var(--black-2);
+$light-color: var(--black-4);
+$extra-light-color: var(--black-5);
+$height: 30px;
+
+.uu-singleSelect {
+  min-width: 50px;
+  position: relative;
+  color: $normal-color;
+  font-size: 13px;
+  text-align: left;
+}
+
+.uu-singleSelectInput {
+  width: 100%;
+  display: flex;
+  height: $height;
+  background: var(--white-1);
+  border: 1px solid $extra-light-color;
+  box-sizing: border-box;
+  border-radius: 5px;
+  line-height: $height;
+  padding: 0 9px;
+  align-items: center;
+  justify-content: space-between;
+  outline: none;
+  color: inherit;
+}
+
+.uu-singleSelectInput_noBorder {
+  border: none;
+}
+
+.uu-singleSelectInput_disabled {
+  background-color: var(--black-7);
+}
+
+.uu-singleSelectInput_error {
+  border: 1px solid var(--red-1);
+}
+
+.uu-singleSelectInputText {
+  display: inline-block;
+  max-width: 100%;
+  padding-right: 5px;
+  box-sizing: border-box;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.uu-singleSelectInputText_placeholder {
+  color: $light-color;
+}
+
+.uu-singleSelectMenu {
+  font-size: 13px;
+  color: $normal-color;
+}
+
+.uu-singleSelectFilter {
+  display: flex;
+  height: $height;
+  width: 100%;
+  border-bottom: 1px solid $extra-light-color;
+  padding: 0 15px;
+  margin: 0;
+  cursor: text;
+  align-items: center;
+  overflow: hidden;
+  box-shadow: 0 5px 6px 0 rgba(0, 0, 0, 0.05);
+  flex-shrink: 0;
+}
+.uu-singleSelectFilter_placeholder {
+  color: $light-color;
+}
+.uu-singleSelectFilter_hidden {
+  display: none;
+}
+
+.uu-singleSelectFilterIcon {
+  cursor: text;
+}
+
+.uu-singleSelectFilterInput {
+  border: none;
+  width: 100%;
+  height: $height;
+  margin: 0;
+  padding: 0 0 0 10px;
+  outline: none;
+  cursor: text;
+  background-color: inherit;
+}
+
+.uu-singleSelectOption {
+  min-height: $height;
+  padding: 5px 15px;
+  font-size: 13px;
+  line-height: 20px;
+  cursor: pointer;
+}
+.uu-singleSelectOption_highlighted {
+  background: #e1f5e9;
+}
+.uu-singleSelectOption_selected {
+  background: #e1f5e9;
+
+  &:hover {
+    cursor: default;
+  }
+}
+
+.uu-singleSelectErrorTooltip {
+  margin-left: 5px;
+}

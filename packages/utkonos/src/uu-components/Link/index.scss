@@ -1,0 +1,26 @@
+.uu-link {
+  text-decoration: none;
+  outline: 0;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+  transition: color 0.15s linear;
+  color: var(--green-2);
+
+  /* disabled */
+  &[aria-disabled='true'] {
+    pointer-events: none;
+    cursor: default;
+    color: var(--black-5);
+  }
+
+  /* focus */
+  &:not([aria-disabled='true']):focus {
+    color: var(--green-1);
+  }
+
+  /* hover */
+  &:not([aria-disabled='true']):hover {
+    color: var(--green-3);
+  }
+}

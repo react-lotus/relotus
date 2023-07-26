@@ -1,0 +1,5 @@
+import { parameters as parametersOriginal } from '<%= offsetFromRoot %>../.storybook/preview';
+
+export const parameters = {
+  ...parametersOriginal,
+};

@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ToggleButton render 1`] = `
+<div
+  class="uu-toggleButton"
+>
+  <label
+    aria-disabled="false"
+    class="uu-toggleButtonLabel uu-toggleButtonLabel_checked"
+    for="nanoid_value1"
+  >
+    <input
+      checked=""
+      class="uu-toggleButtonInput"
+      id="nanoid_value1"
+      name="nanoid"
+      type="radio"
+      value="value1"
+    />
+    label1
+  </label>
+  <label
+    aria-disabled="false"
+    class="uu-toggleButtonLabel"
+    for="nanoid_value2"
+  >
+    <input
+      class="uu-toggleButtonInput"
+      id="nanoid_value2"
+      name="nanoid"
+      type="radio"
+      value="value2"
+    />
+    label2
+  </label>
+</div>
+`;

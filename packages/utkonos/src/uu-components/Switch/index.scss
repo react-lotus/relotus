@@ -1,0 +1,63 @@
+.uu-switch {
+  position: relative;
+  display: inline-flex;
+  height: 20px;
+  width: 40px;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+
+  &:not(.uu-switch_disabled) {
+    cursor: pointer;
+  }
+}
+
+.uu-switchInput {
+  opacity: 0;
+}
+
+.uu-switchTrack {
+  width: 34px;
+  height: 14px;
+  border-radius: 7px;
+  background-color: var(--black-5);
+  overflow: hidden;
+}
+
+.uu-switchTrack_active {
+  background-color: #e1f5e9;
+}
+
+.uu-switchTrack_disabled {
+  background-color: #f2f2f2;
+
+  &.uu-switchTrack_active {
+    background-color: #e1f5e9;
+  }
+}
+
+.uu-switchThumb {
+  position: absolute;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: var(--black-6);
+  border: 3px solid var(--white-1);
+  box-sizing: border-box;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 6px rgba(0, 0, 0, 0.2),
+    0px 1px 3px rgba(0, 0, 0, 0.2);
+
+  transition: all 0.1s;
+}
+.uu-switchThumb_active {
+  left: 20px;
+  background-color: var(--green-2);
+}
+
+.uu-switchThumb_disabled {
+  background-color: #f2f2f2;
+  border: 0 none;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1), 0px 1px 3px rgba(0, 0, 0, 0.1);
+}

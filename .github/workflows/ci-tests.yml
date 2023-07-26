@@ -1,0 +1,40 @@
+name: CI Tests
+on:
+  push:
+    branches:
+      - develop
+  pull_request:
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - name: get sources
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: setup node lts version
+        uses: actions/setup-node@v3
+        with:
+          node-version: lts/gallium
+
+      - name: set nx variables
+        uses: nrwl/nx-set-shas@v3
+        with:
+          main-branch-name: develop
+
+      - name: install dependencies
+        run: npm run setup
+      - name: workspace lint
+        run: npx nx workspace-lint
+      - name: format check
+        run: npm run check:format
+      - name: lint
+        run: npx nx affected:lint --parallel=3
+      - name: stylelint
+        run: npx nx affected --target stylelint --parallel=3
+      - name: test
+        run: npx nx affected:test --parallel=2 --verbose --ci --runInBand=true
+      - name: build
+        run: npx nx affected:build --parallel=3

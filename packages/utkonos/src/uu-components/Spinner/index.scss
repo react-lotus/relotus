@@ -1,0 +1,66 @@
+.uu-spinner_absolute {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.uu-spinnerIconsWrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.uu-spinnerUtkonosIcon {
+  position: absolute;
+}
+
+.uu-spinnerWhirlpoolContainer {
+  position: relative;
+}
+
+.uu-spinnerWhirlpool,
+.uu-spinnerWhirlpool::before,
+.uu-spinnerWhirlpool::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 1px solid rgb(204, 204, 204);
+  border-left-color: rgb(0, 0, 0);
+  border-radius: 974px;
+}
+
+.uu-spinnerWhirlpool {
+  margin: -25px 0 0 -25px;
+  height: 50px;
+  width: 50px;
+  animation: uu-spinnerSpin 1150ms linear infinite;
+}
+
+.uu-spinnerWhirlpool::before {
+  content: '';
+  margin: -22px 0 0 -22px;
+  height: 44px;
+  width: 44px;
+  animation: uu-spinnerSpin 1150ms linear infinite;
+}
+
+.uu-spinnerWhirlpool::after {
+  content: '';
+  margin: -28px 0 0 -28px;
+  height: 56px;
+  width: 56px;
+  animation: uu-spinnerSpin 2300ms linear infinite;
+}
+
+@keyframes uu-spinnerSpin {
+  100% {
+    transform: rotate(360deg);
+  }
+}

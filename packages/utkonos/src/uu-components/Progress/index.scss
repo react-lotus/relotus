@@ -1,0 +1,140 @@
+$dotSmall: 20px;
+$dotLarge: 26px;
+$lineWidth: 2px;
+$shadowSize: 5px;
+
+@function shadow($color) {
+  @return 0 0 0 $shadowSize $color;
+}
+
+@mixin reset() {
+  padding: 0;
+  margin: 0;
+  outline: none;
+}
+
+@mixin dot() {
+  z-index: 1;
+  border-width: $lineWidth;
+  border-style: solid;
+  background: #edf8f1;
+  justify-self: center;
+  border-radius: 50%;
+  border-color: currentColor;
+  @include reset;
+}
+
+.uu-progress {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: ($shadowSize * 2) + 30px 15px;
+  position: relative;
+  padding: $shadowSize;
+  padding-right: 0;
+
+  // Line
+  &:before {
+    content: '';
+    width: $lineWidth;
+    background: var(--green-3);
+    height: 100%;
+    display: block;
+    position: absolute;
+    left: calc((#{$dotSmall - $lineWidth} / 2) + #{$shadowSize});
+  }
+}
+
+.uu-progress_large {
+  &:before {
+    left: calc((#{$dotLarge - $lineWidth} / 2) + #{$shadowSize});
+  }
+}
+
+.uu-progress_withNode {
+  padding-bottom: 0;
+}
+
+.uu-progress__dot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: $dotSmall;
+  height: $dotSmall;
+  box-shadow: shadow(#e1f5e9);
+  color: var(--green-3);
+  @include dot();
+}
+
+.uu-progress__dot_interactive {
+  cursor: pointer;
+}
+
+.uu-progress__dot_large {
+  width: $dotLarge;
+  height: $dotLarge;
+}
+
+.uu-progress__dot_primary {
+  color: var(--green-3);
+  box-shadow: shadow(#e1f5e9);
+}
+
+.uu-progress__dot_complete {
+  color: var(--green-1);
+  box-shadow: shadow(#65c68c);
+}
+
+.uu-progress__dot_wait {
+  color: var(--yellow-2);
+  background: #fff7d9;
+  box-shadow: shadow(#ffe999);
+}
+
+.uu-progress__dot_reject {
+  color: var(--red-3);
+  background: #ffd0d6;
+  box-shadow: shadow(#f29ea9);
+}
+
+.uu-progress__progressItem {
+  display: flex;
+  align-items: center;
+  @include reset;
+  border: none;
+}
+
+.uu-progress__progressItem_interactive {
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--green-2);
+  text-transform: uppercase;
+}
+
+.uu-progress__progressItem_disabled {
+  color: var(--black-3);
+}
+
+.uu-progress__progressItem_active {
+  color: var(--black-1);
+  cursor: initial;
+}
+.uu-progress__node {
+  width: 10px;
+  height: 10px;
+  color: var(--green-3);
+  @include dot();
+}
+
+.uu-progress__stepNumber {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.uu-progress__progressItem_disabled,
+.uu-progress__dot_disabled {
+  cursor: initial;
+}

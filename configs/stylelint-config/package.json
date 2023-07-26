@@ -1,0 +1,22 @@
+{
+  "name": "@relotus/stylelint-config",
+  "version": "1.0.0",
+  "description": "Shared stylelint config",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/react-lotus/relotus.git",
+    "directory": "configs/stylelint-config"
+  },
+  "license": "Apache-2.0",
+  "files": [
+    "index.json",
+    "CHANGELOG.md"
+  ],
+  "peerDependencies": {
+    "stylelint": "14.11.0",
+    "stylelint-config-css-modules": "4.1.0",
+    "stylelint-config-prettier": "9.0.3",
+    "stylelint-config-recommended-scss": "6.0.0",
+    "stylelint-z-index-value-constraint": "1.2.0"
+  }
+}

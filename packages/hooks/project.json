@@ -1,0 +1,75 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/hooks/src",
+  "projectType": "library",
+  "implicitDependencies": ["tsconfig"],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/hooks",
+        "main": "packages/hooks/src/index.ts",
+        "tsConfig": "packages/hooks/tsconfig.lib.json",
+        "assets": ["packages/hooks/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/hooks/**/*.ts"],
+        "maxWarnings": 0
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/hooks"],
+      "options": {
+        "jestConfig": "packages/hooks/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "tsc -b  --incremental",
+        "cwd": "packages/hooks",
+        "color": true
+      }
+    },
+    "storybook": {
+      "executor": "@nrwl/storybook:storybook",
+      "options": {
+        "uiFramework": "@storybook/react",
+        "port": 9011,
+        "config": {
+          "configFolder": "packages/hooks/.storybook"
+        }
+      },
+      "configurations": {
+        "composition": {
+          "quiet": true,
+          "open": false
+        }
+      }
+    },
+    "build-storybook": {
+      "executor": "@nrwl/storybook:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "uiFramework": "@storybook/react",
+        "outputPath": "dist/storybook/hooks",
+        "config": {
+          "configFolder": "packages/hooks/.storybook"
+        }
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    }
+  },
+  "tags": []
+}

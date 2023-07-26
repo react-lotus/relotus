@@ -1,0 +1,53 @@
+$sidebarWidth: 60px;
+
+.uu-sidebar {
+  width: $sidebarWidth;
+  background-color: var(--green-1);
+  height: 100%;
+  position: relative;
+}
+
+.uu-sidebar__menuWrapper {
+  position: absolute;
+  background-color: var(--white-1);
+  top: 0;
+  min-width: 200px;
+  height: 100%;
+  z-index: 1;
+  &::before {
+    $shadowWidth: 21px;
+    content: '';
+    background: linear-gradient(270deg, rgba(0, 0, 0, 0.12) 0%, rgba(255, 255, 255, 2e-5) 51.01%);
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+    position: absolute;
+    height: 100%;
+    width: $shadowWidth;
+    right: -1 * $shadowWidth;
+    top: 0;
+  }
+}
+
+.uu-sidebar__logo {
+  height: 66px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+$version-padding: 15px;
+$version-size: 12px;
+
+.uu-sidebar_versionShow {
+  padding-bottom: $version-padding * 2 + $version-size;
+}
+
+.uu-sidebar__version {
+  color: var(--green-3);
+  position: absolute;
+  bottom: $version-padding;
+  width: 100%;
+  text-align: center;
+  font-size: $version-size;
+  height: $version-size;
+  line-height: $version-size;
+}

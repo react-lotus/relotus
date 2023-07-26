@@ -1,0 +1,217 @@
+include:
+  - project: lenta/frontend-ci
+    ref: v1.3.1
+    file: gitlab-ci/variables.yaml
+
+image: node:$NODE_VERSION
+
+variables:
+  GL_API_URL: $CI_API_V4_URL
+  GIT_STRATEGY: clone
+  GL_TOKEN: $RELEASE_BOT
+  NX_HEAD: $CI_COMMIT_SHA
+  NEXUS_URL: https://nexus.lenta.tech/repository/npm-proxy/
+
+stages:
+  - test
+  - build
+  - publish
+
+default:
+  tags:
+    - build
+
+# Rules
+
+.rule_if_master:
+  if: $CI_COMMIT_REF_NAME == "master"
+  variables:
+    NX_BASE: HEAD~1
+    DIST_TAG: latest
+
+.rule_if_develop: &rule_if_develop
+  if: $CI_COMMIT_REF_NAME == "develop"
+  variables:
+    NX_BASE: HEAD~1
+    DIST_TAG: next
+
+.rule_if_merge_request: &rule_if_merge_request
+  if: $CI_PIPELINE_SOURCE == "merge_request_event"
+  variables:
+    NX_BASE: $CI_MERGE_REQUEST_DIFF_BASE_SHA
+    DIST_TAG: rc
+
+# Scripts
+.prepare_env: &prepare_env
+  - T_GREEN="\e[32m" && T_BLUE="\e[34m" && T_CYAN="\e[36m" && T_CLEAR="\e[0m"
+  - echo -e "Для nx установлен следующие base и head - ${T_GREEN}NX_HEAD${T_CLEAR}=${T_BLUE}${NX_HEAD} ${T_GREEN}NX_BASE${T_CLEAR}=${T_CYAN}${NX_BASE}${T_CLEAR}"
+  - git fetch
+
+.prepare_release: &prepare_release
+  - project_url=$(echo $CI_PROJECT_URL | sed 's/https:\/\///')
+  - git remote set-url origin https://oauth2:$RELEASE_BOT@$project_url
+  - git config --global user.name "$GITLAB_USER_NAME"
+  - git config --global user.email "$GITLAB_USER_EMAIL"
+  - git checkout -B "$CI_COMMIT_REF_NAME" "$CI_COMMIT_SHA"
+  - npm config set @utkonos:registry=${CI_API_V4_URL}/packages/npm/
+  - npm config set -- '//${CI_SERVER_HOST}/api/v4/projects/${CI_PROJECT_ID}/packages/npm/:_authToken' "${CI_JOB_TOKEN}"
+  - *prepare_env
+
+# Cache
+.cache_node_modules: &cache_node_modules
+  key:
+    files:
+      - package-lock.json
+    prefix: $CI_COMMIT_REF_SLUG
+  paths:
+    - node_modules/
+    - packages/*/node_modules/
+  policy: pull
+
+.cache_npm_cache: &cache_npm_cache
+  key:
+    files:
+      - package-lock.json
+  paths:
+    - .npm/
+  policy: pull-push
+  when: 'on_success'
+
+.cache_install:
+  # TODO когда будет кеширование S3 на сервере - раскоменировать `cache` и удалить `artifacts`
+  # cache:
+  #   - *cache_npm_cache
+  #   - <<: *cache_node_modules
+  #     policy: pull-push
+  artifacts:
+    paths:
+      - node_modules
+      - packages/*/node_modules/
+    expire_in: 5 hours
+
+# Cache from artifacts
+# TODO когда будет кеширование S3 на сервере - удалить правило
+.cache_from_artifacts:
+  needs:
+    - job: install dependencies
+      artifacts: true
+
+# Shared
+.base_rules: &base_rules
+  - !reference [.rule_if_master]
+  - !reference [.rule_if_develop]
+  - !reference [.rule_if_merge_request]
+
+.distributed:
+  extends: .cache_from_artifacts
+  interruptible: true
+  allow_failure: false
+  rules:
+    - *base_rules
+  before_script:
+    - *prepare_env
+  artifacts:
+    paths:
+      - node_modules/.cache/nx
+
+# Set cache for all jobs
+# TODO когда будет кеширование S3 на сервере - раскомментировать
+# cache:
+#   - *cache_node_modules
+# Jobs
+install dependencies:
+  stage: .pre
+  extends: .cache_install
+  script:
+    - npm config set registry $NEXUS_URL
+    - npm ci --cache .npm --prefer-offline --no-audit --ignore-scripts
+  rules:
+    - *base_rules
+
+workspace-lint:
+  stage: test
+  extends: .distributed
+  script:
+    - npx nx workspace-lint --base=$NX_BASE --head=$NX_HEAD
+
+format-check:
+  stage: test
+  extends: .distributed
+  script:
+    - npm run check:format -- --base=$NX_BASE --head=$NX_HEAD
+
+lint:
+  stage: test
+  extends: .distributed
+  script:
+    - npx nx affected:lint --base=$NX_BASE --head=$NX_HEAD --parallel=3
+
+stylint:
+  stage: test
+  extends: .distributed
+  script:
+    - npx nx affected --target stylelint --base=$NX_BASE --head=$NX_HEAD --parallel=3 --verbose
+
+test:
+  stage: test
+  extends: .distributed
+  script:
+    - npx nx affected:test --base=$NX_BASE --head=$NX_HEAD --parallel=3 --verbose --ci --code-coverage --runInBand=true
+
+build:
+  stage: build
+  extends: .distributed
+  script:
+    - npx nx affected:build --base=$NX_BASE --head=HEAD --parallel=3
+
+# Release
+
+.publish:
+  stage: publish
+  extends: .distributed
+  before_script:
+    - *prepare_release
+
+
+publish rc:
+  extends: .publish
+  script:
+    - npx lerna version --yes --no-private --no-commit-hooks --no-push --conventional-prerelease --preid=$CI_COMMIT_SHORT_SHA
+    - npx nx affected:build --base=$NX_BASE --head=HEAD --parallel=3
+    - npx lerna publish from-git --yes --dist-tag=$DIST_TAG
+  rules:
+    - <<: *rule_if_develop
+      when: manual
+    - <<: *rule_if_merge_request
+      when: manual
+
+publish:
+  extends: .publish
+  artifacts:
+    expire_in: 1 day
+    paths:
+      - dist/
+  script:
+    - npx lerna version --yes --no-private --conventional-graduate
+    - npx nx affected:build --base=$NX_BASE --head=HEAD --parallel=3
+    - npx lerna publish from-git --yes --dist-tag=$DIST_TAG
+  rules:
+    - !reference [.rule_if_master]
+
+# Storybook
+
+pages:
+  stage: publish
+  extends: .distributed
+  script:
+    - npm run build-storybook
+    - mv dist/storybook public
+    - cp .storybook/assets/redirect.html public/index.html
+  artifacts:
+    paths:
+      - public
+    expire_in: 1 day
+  rules:
+    - !reference [.rule_if_develop]
+    - <<: *rule_if_merge_request
+      when: manual

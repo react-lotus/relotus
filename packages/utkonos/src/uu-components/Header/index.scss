@@ -1,0 +1,27 @@
+.uu-header {
+  position: relative;
+  height: 64px;
+  display: flex;
+  align-items: center;
+
+  background-color: var(--white-1);
+}
+
+.uu-header__pageTitle {
+  color: var(--black-1);
+  margin: 0;
+  font-size: 18px;
+  line-height: 21px;
+  font-weight: 700;
+  -webkit-font-smoothing: antialiased;
+}
+
+.uu-header__content {
+  flex: 1;
+  height: 100%;
+}
+
+.uu-header__titleRoot {
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,37 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="plural" />
+
+# plural
+
+Функция для более удобного склонение существительных после числительных.
+
+```ts
+const pluralPlace = plural('место', 'места', 'мест');
+
+pluralPlace(numericValue);
+```
+
+### Аргументы
+
+| Параметр     | Обязательный | Значение по умолчанию |
+| ------------ | ------------ | --------------------- |
+| numericValue | +            |                       |
+
+### Возвращаемое значение
+
+Строка, состоящая из числительного и существительного в правильном склонении
+
+## Пример использования
+
+```tsx
+function SomeReactComponent() {
+  const pluralPlace = plural('место', 'места', 'мест');
+
+  return (
+    <>
+      <ReactComponent>{pluralPlace(numericValue)}</ReactComponent>
+    </>
+  );
+}
+```

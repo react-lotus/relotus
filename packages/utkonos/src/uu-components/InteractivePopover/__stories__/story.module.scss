@@ -1,0 +1,23 @@
+.playground {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  height: 200px;
+  align-items: center;
+  justify-content: center;
+}
+
+.positionElement {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 0 30px;
+  background-color: var(--black-5);
+  border-radius: 4px;
+}

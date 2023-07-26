@@ -1,0 +1,75 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/storybook",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/storybook/**/*.{ts,tsx,js,jsx}"],
+        "maxWarnings": 0
+      }
+    },
+    "stylelint": {
+      "executor": "nx-stylelint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/storybook/**/*.css"],
+        "formatter": "compact"
+      }
+    },
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "tsc -b  --incremental",
+        "cwd": "packages/storybook",
+        "color": true
+      }
+    },
+    "delay": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "sleep 5"
+      }
+    },
+    "storybook": {
+      "executor": "@nrwl/storybook:storybook",
+      "options": {
+        "uiFramework": "@storybook/react",
+        "port": 9009,
+        "config": {
+          "configFolder": "packages/storybook/.storybook"
+        }
+      },
+      "configurations": {
+        "composition": {
+          "quiet": true
+        }
+      },
+      "dependsOn": [
+        {
+          "projects": "self",
+          "target": "delay"
+        }
+      ]
+    },
+    "build-storybook": {
+      "executor": "@nrwl/storybook:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "uiFramework": "@storybook/react",
+        "outputPath": "dist/storybook/storybook",
+        "config": {
+          "configFolder": "packages/storybook/.storybook"
+        }
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    }
+  }
+}

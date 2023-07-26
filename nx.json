@@ -1,0 +1,46 @@
+{
+  "extends": "nx/presets/npm.json",
+  "workspaceLayout": {
+    "appsDir": "packages",
+    "libsDir": "packages"
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "nx/tasks-runners/default",
+      "options": {
+        "cacheableOperations": [
+          "prebuild:lib",
+          "build:lib",
+          "build:storybook",
+          "storybook",
+          "test",
+          "build",
+          "stylelint",
+          "build-storybook",
+          "build-styles"
+        ]
+      }
+    }
+  },
+  "targetDefaults": {
+    "build": {
+      "dependsOn": ["^build"]
+    }
+  },
+  "affected": {
+    "defaultBase": "develop"
+  },
+  "implicitDependencies": {
+    "package.json": "*",
+    ".stylelintrc.json": "*",
+    ".eslintrc.json": "*",
+    "configs/**/*": "*"
+  },
+  "generators": {
+    "@nrwl/react": {
+      "application": {
+        "babel": true
+      }
+    }
+  }
+}

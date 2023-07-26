@@ -1,0 +1,37 @@
+.uu-monthPicker {
+  position: relative;
+  display: flex;
+}
+
+.uu-monthPicker__date {
+  display: flex;
+  flex: 1 0 120px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+  min-height: 30px;
+  padding: 4px 10px;
+  outline: none;
+  min-width: 120px;
+  background-color: white;
+  border: 1px solid var(--black-5);
+}
+
+.uu-monthPicker__date_secondary {
+  flex-basis: 135px;
+  border-left: none;
+  border-right: none;
+  border-radius: 0;
+  justify-content: center;
+}
+
+.uu-monthPicker__dateText {
+  display: block;
+  color: var(--black-2);
+  font-size: 13px;
+  line-height: 17px;
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}

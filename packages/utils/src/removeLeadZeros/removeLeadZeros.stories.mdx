@@ -1,0 +1,29 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="removeLeadZeros" />
+
+# removeLeadZeros
+
+Функция для удаление впереди стоящих нолей в строке.
+
+```ts
+const noLeadZeros = removeLeadZeros(defaultValue);
+```
+
+### Аргументы
+
+| Параметр | Обязательный | Значение по умолчанию |
+| -------- | ------------ | --------------------- |
+| value    | +            |                       |
+
+### Возвращаемое значение
+
+Строка без впереди стоящих нолей (например, было: 001101, станет: 1101)
+
+## Пример использования
+
+```tsx
+function SomeReactComponent() {
+  return <div>{removeLeadZeros(value as string)}</div>;
+}
+```

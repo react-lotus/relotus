@@ -1,0 +1,59 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="storage" />
+
+# storage
+
+Функция для безопасной работы с localStorage и sessionStorage.
+
+> Также может быть реализован метод QueryStorage (хранилища в адресной строке)
+
+`Local` - обертка для работы с localStorage;
+
+`Session` - обертка для работы с sessionStorage;
+
+> Query - реализация хранилища в адресной строке;
+
+```ts
+const createLocalStorage = Storage.Local.domain(value);
+createLocalStorage.get();
+```
+
+### Аргументы
+
+| Параметр | Обязательный | Значение по умолчанию |
+| -------- | ------------ | --------------------- |
+| value    | +            |                       |
+
+### Доступные методы
+
+`domain` - объявляет предметную область. Сеттер и геттер предметной области типизированны и служат для проверки что читается и устанавливается одно и тоже значение;
+
+`get` - безопасно извлекает значение из хранилища;
+
+`set` - безопасно сохраняет значение в хранилище;
+
+`remove` - безопасно удаляет элемент из хранилища;
+
+`setBatch` - устанавливает значения батчем. Ключ в объекте - ключ в хранилище. Если в config передан namespace (или он установлен раньше), то он будет добавлен - к ключу;
+
+`ns` - устанавливает текущий namespace;
+
+`clear` - безопасно очищает хранилище;
+
+## Пример использования
+
+```tsx
+function SomeReactComponent() {
+  // Создание нового домена
+  const someLocalStoeage = Storage.Local.domain<string>(`newDomain`);
+
+  // Получить значение из localStorage
+  const getLocalStorage = someLocalStoeage.get();
+
+  // Записать новое значение в localStorage
+  getLocalStorage.set(columnOrder);
+
+  return getLocalStorage;
+}
+```

@@ -1,0 +1,91 @@
+$height: 30px;
+
+.uu-breadcrumbs {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+@function border($color: #e2e2e2) {
+  @return 1px solid $color;
+}
+
+@mixin skewedBorder {
+  height: calc($height / 3);
+  width: calc($height / 3);
+  transform: rotate(45deg) skew(25deg, 25deg) scale(1.5);
+  border-top: border();
+  border-right: border();
+}
+
+.uu-breadcrumbsItem {
+  display: flex;
+  align-items: center;
+  position: relative;
+  box-sizing: border-box;
+  font-size: 12px;
+  line-height: 14px;
+  background: var(--white-1);
+  white-space: nowrap;
+}
+
+.uu-breadcrumbsItem_stroke {
+  height: $height;
+  padding: 0 15px 0 20px;
+  border: border();
+  border-right: 0;
+  clip-path: polygon(calc(100% + 7px) -1px, calc(100% + 7px) 100%, -1px 100%, 4.5px 50%, -1px -1px);
+
+  &:first-child {
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    padding-left: 15px;
+    mask-clip: bored-box;
+    clip-path: none;
+  }
+
+  &:not(:first-child) {
+    margin-left: 1px;
+    border-left: none;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: -5px;
+      @include skewedBorder();
+    }
+  }
+
+  &:not(:last-child) {
+    margin-right: 2px;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    right: -5px;
+    @include skewedBorder();
+    background: var(--white-1);
+  }
+}
+
+.uu-breadcrumbsItem_withDelimiter {
+  padding: 5px 10px;
+
+  &:first-child {
+    padding-left: 0;
+  }
+
+  &:not(:first-child) {
+    &:before {
+      content: '';
+      position: absolute;
+      left: -4px;
+      width: 6px;
+      height: 6px;
+      transform: rotate(45deg) skew(15deg, 15deg);
+      border-top: border(#bfbfbf);
+      border-right: border(#bfbfbf);
+    }
+  }
+}

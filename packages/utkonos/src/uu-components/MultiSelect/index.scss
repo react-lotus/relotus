@@ -1,0 +1,118 @@
+.uu-multiSelect {
+  width: 100%;
+  position: relative;
+  font-size: 13px;
+}
+
+.uu-multiSelect_toggleOnly {
+  width: auto;
+}
+
+.uu-multiSelectMenu {
+  cursor: default;
+  font-size: 13px;
+}
+
+.uu-multiSelectValuesContainer {
+  border: 1px solid var(--black-5);
+  background-color: var(--white-1);
+  border-radius: 5px;
+  display: flex;
+  flex-flow: row nowrap;
+  min-width: 46px;
+  min-height: 30px;
+}
+
+.uu-multiSelectValuesContainer_toggleOnly {
+  border: none;
+}
+
+.uu-multiSelectValuesContainer_error {
+  border-color: var(--red-1);
+}
+
+.uu-multiSelectToggle {
+  padding: 0 10px;
+  align-items: center;
+}
+
+.uu-multiSelectToggle_toggleOnly {
+  padding: 0;
+}
+
+.uu-multiSelectValues {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  flex: 1 1 0%;
+  overflow: hidden;
+}
+
+.uu-multiSelectErrorTooltip {
+  margin-left: 10px;
+}
+
+.uu-multiSelectPlaceholder {
+  color: var(--black-4);
+  margin: 0 10px;
+  user-select: none;
+}
+
+.uu-multiSelectFilterInput {
+  border: none;
+  width: 100%;
+  height: 30px;
+  margin: 0;
+  padding: 0 0 0 10px;
+  outline: none;
+  cursor: text;
+}
+
+.uu-multiSelectFilterIcon {
+  color: var(--black-5);
+  cursor: text;
+}
+
+.uu-multiSelectFilter {
+  display: flex;
+  height: 30px;
+  width: 100%;
+  border-bottom: 1px solid var(--black-5);
+  padding: 0 15px;
+  cursor: text;
+  align-items: center;
+  overflow: hidden;
+  box-shadow: 0 5px 6px 0 rgba(0, 0, 0, 0.05);
+  flex-shrink: 0;
+}
+
+.uu-multiSelectFilter_hidden {
+  display: none;
+}
+
+.uu-multiSelectFilterShadow {
+  position: relative;
+  height: 10px;
+  width: 100%;
+  margin-bottom: -10px;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.05) 100%);
+  mix-blend-mode: normal;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.uu-multiSelectOption_empty {
+  color: var(--black-4);
+  cursor: default;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.uu-multiSelectOption {
+  min-height: 30px;
+  padding: 5px 15px;
+  font-size: 13px;
+  line-height: 20px;
+  cursor: pointer;
+}

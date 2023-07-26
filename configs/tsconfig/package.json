@@ -1,0 +1,23 @@
+{
+  "name": "@relotus/tsconfig",
+  "version": "1.0.0",
+  "description": "Shared typescript config",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/react-lotus/relotus.git",
+    "directory": "configs/tsconfig"
+  },
+  "license": "Apache-2.0",
+  "files": [
+    "tsconfig.json",
+    "CHANGELOG.md"
+  ],
+  "devDependencies": {
+    "typescript": "4.5.5",
+    "typescript-plugin-css-modules": "3.4.0"
+  },
+  "peerDependencies": {
+    "typescript": "4.5.5",
+    "typescript-plugin-css-modules": "3.4.0"
+  }
+}

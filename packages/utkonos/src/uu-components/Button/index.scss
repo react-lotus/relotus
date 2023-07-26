@@ -1,0 +1,437 @@
+/**
+ * 1. Значения padding и margin каждый браузер выставляет по-своему – сбрасываем в ноль.
+ * 2. Не должно быть возможности выделить контент кнопки, в т.ч. кнопки-ссылки.
+ * 3. У содержимого кнопок-ссылок не должно быть подчеркивания.
+ * 4. Кнопка не предполагает многострочного содержимого.
+ * 5. Чтобы FF под MacOS не делал blur после программного выставления фокуса по mousedown.
+ *    Подробности: http://jsfiddle.net/mishaberezin/892yppts/10/.
+ * 6. Для кнопок-ссылок.
+ * 7. Убираем нативную подсветку на iOS и Android.
+ * 8. В IE по дефолту hidden, в остальных браузерах visible, требуется нормализация.
+ *    В пользу visible, т.к. мы используем тень для отображения фокуса.
+ * 9. Такой сброс стилей нужен для всех тем.
+ * 10. Сбрасываем браузерные стили для кнопок, в особенности для link.
+ * 11. Указываем z-index, чтобы фон кнопки (::before) не проваливался под элементы.
+ * 12. Вертикальное выравнивание иконок. Благодаря отрицательному margin-top,
+ *     выравниваются аналогично align-items: center.
+ *
+ * Источник: https://github.com/bem/yandex-ui/blob/master/src/components/Button/Button.css
+ */
+.uu-button {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 36px;
+  height: 36px;
+
+  margin: 0; /* 1 */
+  padding: 0 20px;
+
+  position: relative;
+  z-index: 0; /* 11 */
+
+  display: inline-block; /* 6 */
+  overflow: visible; /* 8 */
+
+  -moz-user-focus: ignore; /* 5 */
+  user-select: none; /* 2 */
+  text-align: center; /* 10 */
+  white-space: nowrap; /* 4 */
+  text-decoration: none; /* 3 */
+
+  border-width: 0;
+  outline: 0;
+  background: transparent; /* 9 */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); /* 7 */
+
+  touch-action: manipulation;
+
+  transition: color 0.25s linear;
+
+  cursor: pointer;
+
+  /**
+    * Перестаем реагировать на события мыши, если компонент был отрендерен не как тэг кнопка,
+    * а на пример как ссылка, в остальных случаях достаточно атрибута disabled.
+    */
+  &[disabled] {
+    pointer-events: none;
+    color: var(--white-1);
+    cursor: default;
+  }
+
+  /**
+    * В FF 4+ у содержимого кнопки есть внутренняя обводка, которая используется для
+    * индикации фокуса на кнопках с измененными css-свойствами border или background.
+    * Обводка влияет на размеры, для нормализации с другими браузерами ее нужно убрать.
+    * Подробности: http://stackoverflow.com/questions/8859908.
+    */
+  &::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+  }
+
+  &::before {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    content: '';
+
+    border-radius: 4px;
+
+    transition: background-color 0.25s linear;
+  }
+
+  /* press */
+  &:not([disabled]):active::before {
+    transition: none;
+  }
+
+  /* icons */
+  /* stylelint-disable-next-line selector-nested-pattern */
+  & > svg,
+  & > img,
+  & > picture {
+    display: inline-block;
+    vertical-align: middle; /* 12 */
+    margin-top: -1.2px; /* 12 */
+    &:first-child:not(:last-child) {
+      margin-left: -5px;
+      margin-right: 10px;
+    }
+    &:last-child:not(:first-child) {
+      margin-left: 10px;
+      margin-right: -5px;
+    }
+    &:first-child:last-child {
+      margin-left: -5px;
+      margin-right: -5px;
+    }
+  }
+}
+
+.uu-button_small {
+  line-height: 30px;
+  height: 30px;
+}
+
+/* loading */
+@keyframes uu-buttonLoadingStripes {
+  from {
+    background-position: 20px 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+
+@function loadingStripes($transparency: 0.2) {
+  @return linear-gradient(
+    -45deg,
+    rgba(255, 255, 255, $transparency) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, $transparency) 50%,
+    rgba(255, 255, 255, $transparency) 75%,
+    transparent 75%,
+    transparent
+  );
+}
+
+.uu-button_loading {
+  &::before {
+    background-image: loadingStripes();
+    background-size: 20px 20px;
+    animation: uu-buttonLoadingStripes 2s linear infinite;
+  }
+}
+
+.uu-button_view_primary {
+  color: var(--white-1);
+  &::before {
+    background-color: var(--green-2);
+  }
+  /* disabled */
+  &[disabled]::before {
+    background-color: var(--black-5);
+  }
+  /* hover */
+  &:not([disabled]):hover::before {
+    text-decoration: none;
+    background-color: var(--green-3);
+  }
+  /* press */
+  &:not([disabled]):active::before {
+    background-color: var(--green-1);
+  }
+  /* loading */
+  &.uu-button_loading {
+    &::before {
+      background-color: var(--green-2);
+    }
+  }
+}
+
+.uu-button_view_secondary {
+  color: var(--green-2);
+  &::before {
+    border: 1px solid var(--green-2);
+  }
+  /* disabled */
+  &[disabled] {
+    color: var(--black-5);
+    &::before {
+      border-color: var(--black-5);
+    }
+  }
+  /* hover */
+  &:not([disabled]):hover {
+    color: var(--green-3);
+    &::before {
+      border-color: var(--green-3);
+    }
+  }
+  /* press */
+  &:not([disabled]):active {
+    color: var(--green-1);
+    &::before {
+      border-color: var(--green-1);
+    }
+  }
+  /* loading */
+  &.uu-button_loading {
+    color: var(--green-2);
+    &::before {
+      border-color: transparent;
+      background-color: #e1f5e9;
+      background-image: loadingStripes(0.4);
+    }
+  }
+}
+
+.uu-button_view_light {
+  color: var(--green-2);
+  &::before {
+    border: 1px solid var(--black-5);
+  }
+  /* disabled */
+  &[disabled] {
+    color: var(--black-5);
+  }
+  /* hover */
+  &:not([disabled]):hover {
+    color: var(--green-3);
+  }
+  /* press */
+  &:not([disabled]):active {
+    color: var(--green-1);
+  }
+  /* loading */
+  &.uu-button_loading {
+    color: var(--green-2);
+    &::before {
+      border-color: transparent;
+      background-color: #e1f5e9;
+      background-image: loadingStripes(0.4);
+    }
+  }
+}
+
+.uu-button_view_danger {
+  color: var(--white-1);
+  &::before {
+    background-color: var(--red-2);
+  }
+  /* disabled */
+  &[disabled]::before {
+    background-color: var(--black-5);
+  }
+  /* hover */
+  &:not([disabled]):hover::before {
+    background-color: var(--red-1);
+  }
+  /* press */
+  &:not([disabled]):active::before {
+    background-color: var(--red-3);
+  }
+  /* loading */
+  &.uu-button_loading {
+    &::before {
+      background-color: var(--red-2);
+    }
+  }
+}
+
+.uu-button_view_dangerSecondary {
+  color: var(--red-2);
+  &::before {
+    border: 1px solid var(--red-2);
+  }
+  /* disabled */
+  &[disabled] {
+    color: var(--black-5);
+    &::before {
+      border-color: var(--black-5);
+    }
+  }
+  /* hover */
+  &:not([disabled]):hover {
+    color: var(--red-1);
+    &::before {
+      border-color: var(--red-1);
+    }
+  }
+  /* press */
+  &:not([disabled]):active {
+    color: var(--red-3);
+    &::before {
+      border-color: var(--red-3);
+    }
+  }
+  /* loading */
+  &.uu-button_loading {
+    color: var(--red-1);
+    &::before {
+      border-color: transparent;
+      background-color: #f8e8ea;
+      background-image: loadingStripes(0.4);
+    }
+  }
+}
+
+.uu-button_view_dangerLight {
+  color: var(--red-2);
+  &::before {
+    border: 1px solid var(--black-5);
+  }
+  /* disabled */
+  &[disabled] {
+    color: var(--black-5);
+  }
+  /* hover */
+  &:not([disabled]):hover {
+    color: var(--red-1);
+  }
+  /* press */
+  &:not([disabled]):active {
+    color: var(--red-3);
+  }
+  /* loading */
+  &.uu-button_loading {
+    color: var(--red-1);
+    &::before {
+      border-color: transparent;
+      background-color: #f8e8ea;
+      background-image: loadingStripes(0.4);
+    }
+  }
+}
+
+.uu-button_view_dangerLinkInline,
+.uu-button_view_linkInline {
+  display: inline-block;
+  height: auto;
+  line-height: 16px;
+}
+
+.uu-button_view_link,
+.uu-button_view_dangerLink,
+.uu-button_view_dangerLinkInline,
+.uu-button_view_linkInline {
+  font-weight: 400;
+  padding-left: 0;
+  padding-right: 0;
+  /* loading */
+  &.uu-button_loading::before {
+    background: none;
+    animation: none;
+  }
+  /* icons */
+  /* stylelint-disable no-descending-specificity */
+  /* stylelint-disable-next-line selector-nested-pattern */
+  & > svg,
+  & > img,
+  & > picture {
+    /* stylelint-enable no-descending-specificity */
+    &:first-child:not(:last-child) {
+      margin-left: 0;
+    }
+    &:last-child:not(:first-child) {
+      margin-right: 0;
+    }
+    &:first-child:last-child {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+}
+
+.uu-button_view_link,
+.uu-button_view_linkInline {
+  color: var(--green-2);
+  /* disabled */
+  &[disabled] {
+    color: var(--black-5);
+  }
+  /* hover */
+  &:not([disabled]):hover {
+    color: var(--green-3);
+  }
+  /* press */
+  &:not([disabled]):active {
+    color: var(--green-1);
+  }
+  /* loading */
+  &.uu-button_loading {
+    color: var(--black-5);
+  }
+}
+
+.uu-button_view_dangerLink,
+.uu-button_view_dangerLinkInline {
+  color: var(--red-2);
+  /* disabled */
+  &[disabled] {
+    color: var(--black-5);
+  }
+  /* hover */
+  &:not([disabled]):hover {
+    color: var(--red-1);
+  }
+  /* press */
+  &:not([disabled]):active {
+    color: var(--red-3);
+  }
+  /* loading */
+  &.uu-button_loading {
+    color: var(--black-5);
+  }
+}
+
+.uu-button_square {
+  padding-left: 0;
+  padding-right: 0;
+  width: 36px;
+  overflow-x: hidden;
+  /* small */
+  &.uu-button_small {
+    width: 30px;
+  }
+  /* icons */
+  /* stylelint-disable no-descending-specificity */
+  /* stylelint-disable-next-line selector-nested-pattern */
+  & > svg,
+  & > img,
+  & > picture {
+    /* stylelint-enable no-descending-specificity */
+    &:first-child:not(:last-child),
+    &:last-child:not(:first-child),
+    &:first-child:last-child {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "@relotus/utils",
+  "version": "1.0.0",
+  "description": "shared utils",
+  "keywords": [
+    "utils"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/react-lotus/relotus.git",
+    "directory": "packages/utils"
+  },
+  "license": "Apache-2.0",
+  "dependencies": {
+    "file-saver": "2.0.2"
+  },
+  "devDependencies": {
+    "@types/file-saver": "2.0.1"
+  },
+  "peerDependencies": {
+    "file-saver": "2.0.2"
+  }
+}

@@ -1,0 +1,42 @@
+.uu-multiSelectValue {
+  background-color: #e9f8ef;
+  color: var(--black-2);
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  height: 26px;
+  min-width: 0px;
+  margin: 1px;
+  padding-left: 10px;
+  cursor: default;
+}
+
+.uu-multiSelectValue_disabled {
+  background-color: #f7f7f7;
+  color: var(--black-5);
+}
+
+.uu-multiSelectValueText {
+  font-size: 13px;
+  line-height: 15px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  user-select: none;
+}
+
+.uu-multiSelectValueClose {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 28px;
+  width: 28px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: inherit;
+}
+
+.uu-multiSelectValueClose_disabled {
+  cursor: default;
+}

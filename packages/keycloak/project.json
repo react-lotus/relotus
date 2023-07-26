@@ -1,0 +1,43 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/keycloak/src",
+  "projectType": "library",
+  "implicitDependencies": ["tsconfig"],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/keycloak",
+        "main": "packages/keycloak/src/index.ts",
+        "tsConfig": "packages/keycloak/tsconfig.lib.json",
+        "assets": ["packages/keycloak/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/keycloak/**/*.ts"],
+        "maxWarnings": 0
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/keycloak"],
+      "options": {
+        "jestConfig": "packages/keycloak/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "tsc -b  --incremental",
+        "cwd": "packages/keycloak",
+        "color": true
+      }
+    }
+  },
+  "tags": []
+}

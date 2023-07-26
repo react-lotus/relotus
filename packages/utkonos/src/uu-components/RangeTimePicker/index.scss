@@ -1,0 +1,33 @@
+.uu-rangeTimePicker {
+  display: inline-flex;
+  min-width: 160px;
+  background: var(--white-1);
+  border-radius: 5px;
+}
+
+.uu-rangeTimePicker .uu-singleSelectOption {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.uu-rangeTimePicker__start {
+  min-width: 80px;
+  width: 50%;
+}
+
+.uu-rangeTimePicker__start .uu-singleSelectInput {
+  border-right: none;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.uu-rangeTimePicker__end {
+  min-width: 80px;
+  width: 50%;
+}
+
+.uu-rangeTimePicker__end .uu-singleSelectInput {
+  border-left: none;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}

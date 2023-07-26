@@ -1,0 +1,17 @@
+{
+  "extends": "@relotus/tsconfig",
+  "compileOnSave": false,
+  "compilerOptions": {
+    "sourceMap": true,
+    "rootDir": ".",
+    "baseUrl": ".",
+    "paths": {
+      "@relotus/hooks": ["packages/hooks/src/index.ts"],
+      "@relotus/keycloak": ["packages/keycloak/src/index.ts"],
+      "@relotus/storybook": ["packages/storybook/src/index.ts"],
+      "@relotus/utils": ["packages/utils/src/index.ts"],
+      "@relotus/utkonos": ["packages/utkonos/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

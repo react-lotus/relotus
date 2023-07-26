@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Switch snapshot checked 1`] = `
+<label
+  className="uu-switch"
+  htmlFor="nanoid"
+>
+  <input
+    className="uu-switchInput"
+    defaultChecked={true}
+    id="nanoid"
+    type="checkbox"
+  />
+  <span
+    className="uu-switchTrack"
+  />
+  <span
+    className="uu-switchThumb"
+  />
+</label>
+`;
+
+exports[`Switch snapshot default 1`] = `
+<label
+  className="uu-switch"
+  htmlFor="nanoid"
+>
+  <input
+    className="uu-switchInput"
+    id="nanoid"
+    type="checkbox"
+  />
+  <span
+    className="uu-switchTrack"
+  />
+  <span
+    className="uu-switchThumb"
+  />
+</label>
+`;
+
+exports[`Switch snapshot disabled 1`] = `
+<label
+  className="uu-switch uu-switch_disabled"
+  htmlFor="nanoid"
+>
+  <input
+    className="uu-switchInput"
+    disabled={true}
+    id="nanoid"
+    type="checkbox"
+  />
+  <span
+    className="uu-switchTrack uu-switchTrack_disabled"
+  />
+  <span
+    className="uu-switchThumb uu-switchThumb_disabled"
+  />
+</label>
+`;
+
+exports[`Switch snapshot disabled checked 1`] = `
+<label
+  className="uu-switch uu-switch_disabled"
+  htmlFor="nanoid"
+>
+  <input
+    className="uu-switchInput"
+    defaultChecked={true}
+    disabled={true}
+    id="nanoid"
+    type="checkbox"
+  />
+  <span
+    className="uu-switchTrack uu-switchTrack_disabled"
+  />
+  <span
+    className="uu-switchThumb uu-switchThumb_disabled"
+  />
+</label>
+`;
