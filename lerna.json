@@ -13,7 +13,7 @@
     "version": {
       "allowBranch": ["master", "develop", "hotfix"],
       "conventionalCommits": true,
-      "createRelease": "gitlab",
+      "createRelease": "github",
       "preid": "rc",
       "exact": true,
       "message": "chore(release): publish [skip ci]"

@@ -19,5 +19,8 @@
   },
   "peerDependencies": {
     "file-saver": "2.0.2"
+  },
+  "publishConfig": {
+    "directory": "../../dist/packages/utils"
   }
 }

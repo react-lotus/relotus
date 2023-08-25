@@ -16,5 +16,8 @@
     "@reduxjs/toolkit": "~1.8.0",
     "react": ">=16.8.0",
     "react-redux": ">=7.0.0"
+  },
+  "publishConfig": {
+    "directory": "../../dist/packages/store"
   }
 }
