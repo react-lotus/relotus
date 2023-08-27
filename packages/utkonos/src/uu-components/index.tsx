@@ -1,4 +1,3 @@
-import 'react-dates/initialize';
 import './_datepicker/_datepicker.scss';
 
 export * from './ResetErrorBoundary';

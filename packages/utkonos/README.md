@@ -1,16 +1,10 @@
-# @relotus/utkonos
-
-Репозиторий включает в себя три разных проекта, интегрированных друг в друга:
-
-- библиотека компонентов / [UI components](#ui-components)
-
 ## Table of Contents
 
 <!-- prettier-ignore-start -->
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-- [`@relotus/hooks`](#relotushooks)
+- [@relotus/utkonos](#relotusutkonos)
   - [Описание](#%D0%BE%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5)
   - [Установка](#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0)
   - [Обновление](#%D0%BE%D0%B1%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5)
@@ -22,7 +16,7 @@
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 <!-- prettier-ignore-end -->
 
-# `@relotus/hooks`
+# @relotus/utkonos
 
 ## Описание
 
@@ -36,10 +30,10 @@ npm i @relotus/utkonos
 
 Вместе с самим пакетом устанавливаются `peerDependencies`. Версии пакетов фиксированы.
 
-Добавить в общих стилей стилей проекта:
+Добавить в файл общих стилей дополнительные стили компонентов:
 
 ```scss
-@import '@relotus/utkonos/styles/components';
+@import '@relotus/utkonos/index';
 ```
 
 ## Обновление
@@ -64,7 +58,7 @@ ReactDOM.render(<App />, document.querySelector('#app'));
 
 ## SingleDatePicker & DateRangePicker
 
-Подключение и использование компонентов выбора дат дополнительно требует подключения стилей (`/* 1 */`), выполнения скрипта инициализации (`/* 2 */`) и языковой локализации пакета `moment` (`/* 3 */`). Перечисленные действия необходимо реализовать в коде проекта только один раз. Для этих целей рекомендуется использовать файл `src/index.tsx` (или аналогичный), являющийся базовой точкой входа в проект.
+Подключение и использование компонентов выбора дат дополнительно требует выполнения скрипта инициализации (`/* 1 */`) и языковой локализации пакета `moment` (`/* 2 */`). Перечисленные действия необходимо реализовать в коде проекта только один раз. Для этих целей рекомендуется использовать файл `src/index.tsx` (или аналогичный), являющийся базовой точкой входа в проект.
 
 Компоненты `<SingleDatePicker />` и `<DateRangePicker />` - это стилизованные компоненты библиотеки [react-dates](https://github.com/airbnb/react-dates). API компонентов повторяет API компонентов библиотеки, а также включает несколько дополнительно возможностей (например, валидация полей ввода).
 
@@ -73,18 +67,15 @@ ReactDOM.render(<App />, document.querySelector('#app'));
 ```jsx
 import React from 'react';
 import ReactDOM from 'react-dom';
-import moment from 'moment'; /* 3 */
+import moment from 'moment'; /* 2 */
 
-import 'moment/locale/ru'; /* 3 */
+import 'moment/locale/ru'; /* 2 */
 
-import '@relotus/utkonos/styles/components.css';
-import '@relotus/utkonos/styles/_datepicker.css'; /* 1 */
-
-import '@relotus/utkonos/lib/initialize'; /* 2 */
+import 'react-dates/initialize'; /* 1 */
 
 import { SingleDatePicker } from '@relotus/utkonos';
 
-moment.locale('ru-Ru'); /* 3 */
+moment.locale('ru-Ru'); /* 2 */
 
 function App() {
   const [date, setDate] = React.useState(null);
@@ -97,9 +88,9 @@ ReactDOM.render(<App />, document.querySelector('#app'));
 
 ## Стилизация
 
-Для стилизации компонентов используем SCSS.
+Для стилизации компонентов используется SCSS.
 
-Главному классу компонента даем имя компонента в `camelCase` с префиксом `uu-`:
+Главному классу компонента дается имя компонента в `camelCase` с префиксом `uu-`:
 
 ```scss
 .uu-button {
