@@ -5,4 +5,4 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 # 1.0.0 (2023-08-27)
 
-**Note:** Version bump only for package @relotus/keycloak
+**Note:** Version bump only for package @relotus/store
