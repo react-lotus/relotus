@@ -6,7 +6,7 @@ import Keycloak from 'keycloak-js';
 import { bindInterceptor, setTokenToHeder } from './interceptor';
 import { initKeycloak } from '..';
 
-const keycloak = Keycloak();
+const keycloak = new Keycloak();
 
 jest.mock('axios', () => ({
   __esModule: true,

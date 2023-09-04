@@ -15,7 +15,7 @@ const subscribe = (eventName: AuthClientEvent, cb: (event: EventPayload) => void
 };
 
 export function initKeycloak(config: KeycloakConfig, axios?: Axios) {
-  const keycloak = OriginKeycloak({
+  const keycloak = new OriginKeycloak({
     ...config,
   });
 
