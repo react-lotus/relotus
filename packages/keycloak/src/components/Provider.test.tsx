@@ -4,7 +4,7 @@ import KeycloakJS from 'keycloak-js';
 
 import { createProvider } from './Provider';
 
-const keycloak = KeycloakJS({
+const keycloak = new KeycloakJS({
   clientId: 'Test',
   realm: 'Test',
   url: 'https://example.org',

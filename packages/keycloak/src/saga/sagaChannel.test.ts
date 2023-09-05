@@ -22,7 +22,7 @@ describe('createKeycloakChannel', () => {
       const chanel = createKeycloakChannel();
       const cb = jest.fn();
       chanel.take(cb);
-      authEventEmitter.emit(keycloakEvent, { keycloak: Keycloak() });
+      authEventEmitter.emit(keycloakEvent, { keycloak: new Keycloak() });
       await waitFor(() => {
         expect(cb).toBeCalledWith(expect.objectContaining({ type: expect.hasSymbol(event) }));
       });
@@ -33,7 +33,7 @@ describe('createKeycloakChannel', () => {
       const chanel = createKeycloakChannel();
       const cb = jest.fn();
       chanel.take(cb);
-      authEventEmitter.emit(keycloakEvent, { keycloak: Keycloak() });
+      authEventEmitter.emit(keycloakEvent, { keycloak: new Keycloak() });
       await waitFor(() => {
         const [payload] = cb.mock.calls[0];
         expect(events[event].match(payload)).toBeTruthy();
@@ -47,7 +47,7 @@ describe('createKeycloakChannel', () => {
       chanel.take(cb);
       chanel.close();
       cb.mockReset();
-      authEventEmitter.emit(keycloakEvent, { keycloak: Keycloak() });
+      authEventEmitter.emit(keycloakEvent, { keycloak: new Keycloak() });
       await waitFor(() => {
         expect(cb).not.toHaveBeenCalled();
       });
