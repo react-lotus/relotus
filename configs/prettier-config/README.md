@@ -15,7 +15,7 @@
 Установить пакеты:
 
 ```sh
-npm install --save-dev --save-exact prettier@2.7.1 @relotus/prettier-config
+npm install --save-dev --save-exact prettier@2.8.8 @relotus/prettier-config
 ```
 
 Добавить в [проект конфигурацию для `prettier`](https://prettier.io/docs/en/configuration.html#sharing-configurations) с указанием `@relotus/prettier-config` в качестве наименования переиспользуемой конфигурации. Пример для указания через `package.json`:
