@@ -1,0 +1,50 @@
+name: Storybook Build And Deploy
+on:
+  push:
+    branches:
+      - develop
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: 'pages'
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: get sources
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: install
+        uses: ./.github/actions/install
+
+      - name: build storybook
+        run: npm run build-storybook
+
+      - name: move dist
+        run: |
+          mv dist/storybook docs
+          cp .storybook/assets/redirect.html docs/index.html
+
+      - name: setup pages
+        uses: actions/configure-pages@v3
+
+      - name: upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: 'docs/'
+
+      - name: deploy to github pages
+        id: deployment
+        uses: actions/deploy-pages@v2

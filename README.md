@@ -21,7 +21,7 @@
 
 ### Запуск Storybook
 
-Storybook опубликован в Gitlab Pages и доступен по адресу: https://utkonos.pages.utkonos.ru/utkonos
+Storybook доступен в по адресу: https://react-lotus.github.io/relotus/
 
 `npm run storybook` - запуск общего React UI Team Storybook в dev-режиме
 

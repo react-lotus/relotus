@@ -14,22 +14,9 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: node version
-        id: node_info
-        run: echo "version=$(cat .nvmrc)" >> $GITHUB_OUTPUT
+      - name: install
+        uses: ./.github/actions/install
 
-      - name: setup node lts version
-        uses: actions/setup-node@v3
-        with:
-          node-version: '${{ steps.node_info.outputs.version }}'
-
-      - name: set nx variables
-        uses: nrwl/nx-set-shas@v3
-        with:
-          main-branch-name: develop
-
-      - name: install dependencies
-        run: npm run setup
       - name: workspace lint
         run: npx nx workspace-lint
       - name: format check
