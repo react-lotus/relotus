@@ -14,7 +14,7 @@
   "scripts": {
     "build": "nx run-many --target=build",
     "storybook": "nx run-many --target=storybook --configuration=composition --parallel=10",
-    "build-storybook": "nx run-many --target=build-storybook --parallel=2",
+    "build-storybook": "nx run-many --target=build-storybook --parallel=5",
     "test": "nx run-many --target test",
     "check:ts": "nx run-many --target typecheck",
     "check:lint": "nx run-many --target lint",
