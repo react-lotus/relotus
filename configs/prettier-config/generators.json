@@ -1,0 +1,9 @@
+{
+  "generators": {
+    "init": {
+      "factory": "./src/generators/init/generator",
+      "schema": "./src/generators/init/schema.json",
+      "description": "Инициализация зависимостей и настроек для prettier и @relotus/prettier-config"
+    }
+  }
+}
